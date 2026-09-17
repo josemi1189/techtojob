@@ -1,0 +1,12 @@
+{
+  "NavItems": {
+    "home": "Home",
+    "homeAriaLabel": "Principal page",
+    "aboutUs": "About us",
+    "cookies": "Cookies policy",
+    "privacy": "Privacy policy",
+    "pages": "Pages",
+    "btnChangeEN": "Change language to English",
+    "btnChangeES": "Change language to Spanish"
+  }
+}

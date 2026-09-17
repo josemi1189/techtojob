@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "@fontsource-variable/sora/wght.css";
+
+@theme {
+  --colorPrimary: #2f3436;
+  --colorSecondary: #84c0bf;
+  --colorThird: #FFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorPrimary);
+  font-family: "Sora Variable", sans-serif;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 2em;
+}

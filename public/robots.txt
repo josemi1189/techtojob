@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+# Sitemap: 
+
+# Bloquear archivos de Next.js
+Disallow: /_next/static/
+Disallow: /_next/image
+
+# Bloquear archivos del sistema
+Disallow: /*.json$
+Disallow: /*.map$
