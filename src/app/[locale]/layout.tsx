@@ -1,13 +1,22 @@
-import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import "@/assets/css/vendors/reset.css";
 import "@/assets/css/vendors/normalize.css";
 import "@/assets/css/base/global-styles.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import { Header, Footer } from "@/layout";
+import { getTranslations } from "next-intl/server";
+import * as constants from "@/constants/constants";
+import type { Metadata } from "next";
 
-export function generateStaticParams() {
-  return [{ locale: "es" }, { locale: "en" }];
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: constants.appName,
+    description: t("description"),
+  };
 }
 
 type Props = {
@@ -26,9 +35,9 @@ export default async function PublicLayout({ children, params }: Props) {
         strategy="afterInteractive"
       />
       <NextIntlClientProvider locale={locale}>
-        {/*<Header />*/}
+        <Header />
         <main>{children}</main>
-        {/*<Footer />*/}
+        <Footer />
       </NextIntlClientProvider>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ANALYTICS_ID || ""} />
     </>

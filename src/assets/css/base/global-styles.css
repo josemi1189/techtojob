@@ -2,9 +2,12 @@
 @import "@fontsource-variable/sora/wght.css";
 
 @theme {
-  --colorPrimary: #2f3436;
-  --colorSecondary: #84c0bf;
-  --colorThird: #FFF;
+  --color-primary: #2f3436;
+  --color-secondary: #84c0bf;
+  --color-third: #ffffff;
+  --color-accent: #e07a5f;
+  --shadow-header: 0px 0px 11px 4px #343d41;
+  --shadow-footer: 0px 0px 11px 4px #343d41;
 }
 
 * {
@@ -13,7 +16,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--colorPrimary);
+  background-color: var(--color-primary);
   font-family: "Sora Variable", sans-serif;
   min-height: 100dvh;
   margin: 0;
@@ -24,5 +27,5 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-bottom: 2em;
+  padding: 0.5em 0.1em;
 }

@@ -1,5 +1,14 @@
 {
   "HomePage": {
-    "home": "Página principal"
+    "home": "HomePage"
+  },
+  "Metadata": {
+    "description": ""
+  },
+  "Hero": {
+    "hero1": "Platform for developers and companies",
+    "hero2": "Don't look for a job. Let it find you.",
+    "hero3": "Join tournaments, help other developers, be visible — and let companies come looking for you.",
+    "btnAction": "Join our Discord"
   }
 }

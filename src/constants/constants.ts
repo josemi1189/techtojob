@@ -1,3 +1,5 @@
+export const appName: string = "TechToJob";
+
 export const LOCALES: Record<string, string> = {
   es: "Español",
   en: "Inglés",

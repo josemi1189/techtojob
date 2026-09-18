@@ -1,0 +1,17 @@
+.content {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  .link {
+    border: none;
+    background-color: $background;
+    width: auto;
+    height: auto;
+  }
+  .link > svg:hover {
+    box-shadow: 0 0 2px 2px #bbbbbb;
+    border-radius: 50%;
+  }
+}
