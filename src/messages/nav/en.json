@@ -1,12 +1,15 @@
 {
-  "NavItems": {
+  "Nav": {
     "home": "Home",
     "homeAriaLabel": "Principal page",
     "aboutUs": "About us",
     "cookies": "Cookies policy",
     "privacy": "Privacy policy",
     "pages": "Pages",
+    "logoAlt": "TechToJob Logo",
     "btnChangeEN": "Change language to English",
-    "btnChangeES": "Change language to Spanish"
+    "btnChangeES": "Change language to Spanish",
+    "btnActionName": "Join Discord",
+    "btnActionTitle": "Go to the TechToJob Discord community"
   }
 }

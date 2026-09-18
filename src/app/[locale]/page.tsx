@@ -1,3 +1,4 @@
+import { Hero, Steps } from "@/pods";
 import type { NextPage } from "next";
 
 interface HomePageProps {
@@ -7,7 +8,12 @@ interface HomePageProps {
 }
 
 const HomePage: NextPage<HomePageProps> = () => {
-  return <>Página principal</>;
+  return (
+    <>
+      <Hero />
+      <Steps />
+    </>
+  );
 };
 
 export default HomePage;
