@@ -11,17 +11,22 @@ export const Header = async () => {
   return (
     <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between min-h-20 bg-primary text-primary shadow-header text-[1.1rem] font-semibold px-1 md:px-12">
       <div className="shrink-0 p-2">
-        <picture>
-          <source media="(min-width: 640px)" srcSet="/logo.svg" />
-          <Image
-            src="/icon.svg"
-            alt={t("logoAlt")}
-            width={64}
-            height={64}
-            className="h-auto w-16 shrink-0 sm:w-72.5"
-            loading="lazy"
-          />
-        </picture>
+        <Image
+          src="/icon.svg"
+          alt={t("logoAlt")}
+          width={64}
+          height={64}
+          className="block h-auto w-16 sm:hidden"
+          loading="lazy"
+        />
+        <Image
+          src="/logo.svg"
+          alt={t("logoAlt")}
+          width={240}
+          height={64}
+          className="hidden h-auto w-72.5 sm:block"
+          loading="lazy"
+        />
       </div>
       <section className="flex shrink-0 flex-row items-center gap-5">
         <DesktopNav itemsMenu={itemsMenu} />
