@@ -1,31 +1,35 @@
-import { Button } from "@/common/atoms/button";
 import { SelectLanguages } from "@/pods/selectLanguages";
-import { useTranslations } from "next-intl";
+//import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { DesktopNav } from "./components";
+import { itemsMenu } from "@/config";
+import { MobileNav } from "./components";
 
-export const Header = () => {
-  const t = useTranslations("Nav");
+export const Header = async () => {
+  const t = await getTranslations("Nav");
   return (
-    <header className="sticky top-0 z-50 flex flex-row justify-between items-center h-20 min-h-fit bg-primary text-primary shadow-header text-[1.1rem] font-semibold px-1 md:px-12">
-      <div className="max-w-[70dvw] p-1">
-        <Image
-          src="/logo.svg"
-          alt={t("logoAlt")}
-          width={290}
-          height={64}
-          className="w-72 h-auto"
-          loading="lazy"
-        />
+    <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between min-h-20 bg-primary text-primary shadow-header text-[1.1rem] font-semibold px-1 md:px-12">
+      <div className="shrink-0 p-2">
+        <picture>
+          <source media="(min-width: 640px)" srcSet="/logo.svg" />
+          <Image
+            src="/icon.svg"
+            alt={t("logoAlt")}
+            width={64}
+            height={64}
+            className="h-auto w-16 shrink-0 sm:w-72.5"
+            loading="lazy"
+          />
+        </picture>
       </div>
+      <section className="flex shrink-0 flex-row items-center gap-5">
+        <DesktopNav itemsMenu={itemsMenu} />
 
-      <div className="flex items-center gap-4 w-fit">
         <SelectLanguages />
-      </div>
-      <div>
-        <Button to="#" title={t("btnActionTitle")} internal={false} size="S">
-          {t("btnActionName")}
-        </Button>
-      </div>
+        <MobileNav items={itemsMenu} />
+      </section>
+      {/*<div className="basis-full lg:basis-auto"></div>*/}
     </header>
   );
 };

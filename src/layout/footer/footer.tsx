@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { routes } from "@/config";
 import { useTranslations } from "next-intl";
+import { Button } from "@/common/atoms/button";
 
 export const Footer: React.FC = () => {
   const t = useTranslations("Nav");
@@ -18,8 +19,11 @@ export const Footer: React.FC = () => {
             {t("aboutUs")}
           </Link>
         </div>
-        <div className="flex gap-x-4 p-4 items-center md:order-2">
-          Enlaces redes sociales
+        <div className="flex flex-col gap-4 justify-between gap-x-4 p-4 items-center md:order-2">
+          <nav>Enlaces redes sociales</nav>
+          <Button to="#" title={t("btnActionTitle")} internal={false} size="S">
+            {t("btnActionName")}
+          </Button>
           {/* svg class: w-[2.4em] hover:text-accent hover:cursor-pointer */}
         </div>
         <div className="flex flex-col gap-y-2 md:flex-col md:order-3">
@@ -43,7 +47,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
       <div className="text-primary text-[0.9rem] text-right">
-        <span>©2026 - {/*new Date().getFullYear()*/} TechToJob</span>
+        <span>©{/*new Date().getFullYear()*/} TechToJob</span>
       </div>
     </footer>
   );

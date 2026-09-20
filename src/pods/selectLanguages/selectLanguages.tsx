@@ -8,9 +8,9 @@ export const SelectLanguages: React.FC = () => {
   const t = useTranslations("Nav");
 
   return (
-    <div className="flex flex-row gap-4 w-fit">
+    <div className="flex w-fit shrink-0 flex-row gap-4">
       <Link
-        className="border-0 bg-primary"
+        className="shrink-0 border-0 bg-primary"
         href={pathname}
         locale="es"
         scroll={false}
@@ -21,7 +21,7 @@ export const SelectLanguages: React.FC = () => {
       </Link>
 
       <Link
-        className="border-0 bg-primary"
+        className="shrink-0 border-0 bg-primary"
         href={pathname}
         locale="en"
         scroll={false}
