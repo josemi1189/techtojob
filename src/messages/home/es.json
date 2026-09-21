@@ -28,5 +28,15 @@
       "title": "Consigue tu oportunidad",
       "description": "Convierte ese interés en entrevistas y consigue tu próximo trabajo."
     }
+  },
+  "talent": {
+    "title": "Ofrécete como talento",
+    "subtitle": "Cuenta qué se te da mejor y deja que te encuentren",
+    "talent1": "Una persona real mira tu perfil",
+    "subtalent1": "Ningún software ciego descarta tu candidatura antes de que alguien con criterio vea lo que sabes hacer",
+    "talent2": "Juniors y seniors, misma puerta",
+    "subtalent2": "No te pediremos cinco años de experiencia para un puesto de entrada. Cuenta lo que sabes hacer hoy.",
+    "talent3": "Gratis para siempre",
+    "subtalent3": "Crear tu ficha, participar en los retos y hablar con empresas no te costará ni un céntimo."
   }
 }
