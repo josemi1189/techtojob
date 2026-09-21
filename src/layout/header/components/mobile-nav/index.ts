@@ -1,1 +1,1 @@
-export * from "./mobile-nav.component";
+export * from "./mobile-nav";

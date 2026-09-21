@@ -2,6 +2,12 @@
   "Nav": {
     "home": "Home",
     "homeAriaLabel": "Principal page",
+    "steps": "How it works",
+    "stepsAriaLabel": "How it works",
+    "talent": "Talento",
+    "talentAriaLabel": "Para talento",
+    "company": "Companies",
+    "companyAriaLabel": "For businesses",
     "news": "News",
     "aboutUs": "About us",
     "cookies": "Cookies policy",

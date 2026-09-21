@@ -23,7 +23,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ items }) => {
    */
   const setClassLinkActive = (to: string): string => {
     const base =
-      "block w-full px-6 py-[18px] text-sm font-semibold text-primary no-underline transition-all duration-200 hover:bg-gray-100 hover:pl-[30px] hover:text-secondary active:bg-[#e8e8e8]";
+      "block w-full px-6 py-[18px] text-sm font-semibold text-primary no-underline transition-all duration-200 hover:bg-gray-100 hover:pl-[30px] hover:text-secondary";
     if (to === pathname) return `${base} text-secondary`;
     return base;
   };
@@ -32,7 +32,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ items }) => {
     <>
       {/* Botón hamburguesa */}
       <button
-        className="group flex flex-col gap-1.5 border-0 bg-transparent p-2.5 z-1001 items-center sm:hidden"
+        type="button"
+        className="group relative z-1001 flex flex-col gap-1.5 border-0 bg-transparent p-2.5 items-center sm:hidden"
         onClick={toggleMenu}
         aria-label="Menú de navegación"
         aria-expanded={isOpen}
@@ -57,8 +58,9 @@ export const MobileNav: React.FC<MobileNavProps> = ({ items }) => {
       )}
 
       {/* Menú desplegable */}
+
       <nav
-        className={`block fixed top-0 z-1000 h-screen w-70 overflow-y-auto bg-white shadow-[-2px_0_10px_rgba(0,0,0,0.1)] transition-[right] duration-300 lg:hidden ${isOpen ? "right-0" : "-right-full"}`}
+        className={`fixed top-0 right-0 z-1000 h-screen w-60 overflow-y-auto bg-white shadow-[-2px_0_10px_#00000019] transition-transform duration-300 lg:hidden ${isOpen ? "translate-x-0" : "pointer-events-none translate-x-full"}`}
       >
         <ul className="m-0 list-none pt-20">
           {items.map((item, index) => (
