@@ -1,6 +1,7 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { SectionProps } from "@/common/common.vm";
+import { ContentDarkLayout } from "@/layout";
 
 interface Steps {
   title: string;
@@ -27,16 +28,12 @@ const steps: Steps[] = [
 export const Steps: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("Steps");
   return (
-    <section
+    <ContentDarkLayout
       id={idNav}
+      title={t("title")}
+      subtitle={t("subtitle")}
       className="scroll-mt-20 flex px-2 py-20 flex-col gap-6 items-center justify-center w-full bg-linear-to-b from-third/15 via-third/10 to-transparent"
     >
-      <h2 className="text-5xl sm:text-6xl text-secondary font-black">
-        {t("title")}
-      </h2>
-      <span className="text-3xl text-center text-white font-bold">
-        {t("subtitle")}
-      </span>
       <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-16 w-full justify-center max-w-6xl gap-10">
         {steps.map((step) => (
           <div
@@ -52,6 +49,6 @@ export const Steps: React.FC<SectionProps> = async ({ idNav }) => {
           </div>
         ))}
       </div>
-    </section>
+    </ContentDarkLayout>
   );
 };

@@ -24,13 +24,7 @@ const steps: Steps[] = [
 export const CompanySteps: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("CompanySteps");
   return (
-    <ContentDarkLayout id={idNav}>
-      <h2 className="text-5xl sm:text-6xl text-secondary font-black">
-        {t("title")}
-      </h2>
-      <span className="text-3xl text-center text-white font-bold">
-        {t("subtitle")}
-      </span>
+    <ContentDarkLayout id={idNav} title={t("title")} subtitle={t("subtitle")}>
       <div className="pt-6 flex flex-row flex-wrap xl:gap-x-16 w-full justify-center max-w-6xl gap-10">
         {steps.map((step) => (
           <div

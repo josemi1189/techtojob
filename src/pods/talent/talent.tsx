@@ -7,13 +7,7 @@ import { SectionProps } from "@/common/common.vm";
 export const Talent: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("talent");
   return (
-    <ContentLightLayout id={idNav}>
-      <h2 className="text-5xl sm:text-6xl text-secondary font-black">
-        {t("title")}
-      </h2>
-      <span className="text-3xl text-center text-primary/80 font-bold">
-        {t("subtitle")}
-      </span>
+    <ContentLightLayout id={idNav} title={t("title")} subtitle={t("subtitle")}>
       <div className="flex flex-col gap-5 p-4 w-full h-fit">
         <div>
           <h3 className="flex items-center gap-2 py-2 text-xl font-semibold">
