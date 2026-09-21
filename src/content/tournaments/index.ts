@@ -1,2 +1,2 @@
-export * from "./tournament-list";
+export * from "./tournament-data";
 export * from "./tournament.vm";
