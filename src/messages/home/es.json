@@ -12,6 +12,8 @@
     "btnAction": "Únete a nuestro Discord"
   },
   "Steps": {
+    "title": "Cómo funciona",
+    "subtitle": "De entrar a Discord a conseguir tus primeras oportunidades",
     "step1": {
       "title": "Únete",
       "description": "Entra en Discord y preséntate a la comunidad."
@@ -38,5 +40,21 @@
     "subtalent2": "No te pediremos cinco años de experiencia para un puesto de entrada. Cuenta lo que sabes hacer hoy.",
     "talent3": "Gratis para siempre",
     "subtalent3": "Crear tu ficha, participar en los retos y hablar con empresas no te costará ni un céntimo."
+  },
+  "CompanySteps": {
+    "title": "Para empresas",
+    "subtitle": "Pruebas y trabajos reales antes del primer contacto",
+    "step1": {
+      "title": "Explora el trabajo real",
+      "description": "Visualiza proyectos y evidencias previas de la comunidad antes de hablar con nadie."
+    },
+    "step2": {
+      "title": "Publica tu necesidad",
+      "description": "Define exactamente qué buscas para atraer a perfiles motivados."
+    },
+    "step3": {
+      "title": "Conecta de forma directa",
+      "description": "Contacta solo con candidatos que ya han demostrado su valía con hechos."
+    }
   }
 }

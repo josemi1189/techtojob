@@ -18,26 +18,22 @@ const steps: Steps[] = [
     title: "step3.title",
     description: "step3.description",
   },
-  {
-    title: "step4.title",
-    description: "step4.description",
-  },
 ];
-export const Steps: React.FC = async () => {
-  const t = await getTranslations("Steps");
+export const CompanySteps: React.FC = async () => {
+  const t = await getTranslations("CompanySteps");
   return (
-    <section className="flex px-2 py-10 flex-col gap-6 items-center justify-center w-full bg-linear-to-b from-third/15 via-third/10 to-transparent">
+    <section className="flex px-2 py-20 flex-col gap-6 items-center justify-center w-full ">
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">
-        Cómo funciona
+        {t("title")}
       </h2>
       <span className="text-3xl text-center text-white font-bold">
-        De entrar a Discord a conseguir tus primeras oportunidades
+        {t("subtitle")}
       </span>
-      <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-16 w-full justify-center max-w-6xl gap-10">
+      <div className="pt-6 flex flex-row flex-wrap xl:gap-x-16 w-full justify-center max-w-6xl gap-10">
         {steps.map((step) => (
           <div
             key={step.title}
-            className="flex w-72 h-58 flex-col justify-self-center  rounded-xl border border-third/10 bg-third/5 p-4 text-left"
+            className="flex w-72 h-56 flex-col justify-self-center rounded-xl border border-third/10 bg-third/10 p-4 text-left"
           >
             <p className="text-md uppercase tracking-[0.2em] text-secondary">
               {t(step.title)}

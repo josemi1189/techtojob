@@ -1,5 +1,4 @@
-import { Hero, Steps } from "@/pods";
-import { Talent } from "@/pods/talent/talent";
+import { Hero, Steps, Talent, CompanySteps } from "@/pods";
 import type { NextPage } from "next";
 
 interface HomePageProps {
@@ -14,6 +13,7 @@ const HomePage: NextPage<HomePageProps> = () => {
       <Hero />
       <Steps />
       <Talent />
+      <CompanySteps />
     </>
   );
 };

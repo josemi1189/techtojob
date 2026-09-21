@@ -12,6 +12,8 @@
     "btnAction": "Join our Discord"
   },
   "Steps": {
+    "title": "How it works",
+    "subtitle": "From joining Discord to landing your first opportunities",
     "step1": {
       "title": "Join",
       "description": "Hop into Discord and introduce yourself to the community."
@@ -38,5 +40,21 @@
     "subtalent2": "We won't ask you for five years of experience for an entry-level position. Tell us what you can do today.",
     "talent3": "Free forever",
     "subtalent3": "Creating your profile, taking part in the challenges, and talking to companies won't cost you a single cent."
+  },
+  "CompanySteps": {
+    "title": "For companies",
+    "subtitle": "Real work and proof of skill before the first contact",
+    "step1": {
+      "title": "Explore real work",
+      "description": "View the community's projects and previous work before talking to anyone."
+    },
+    "step2": {
+      "title": "Post your need",
+      "description": "Define exactly what you're looking for to attract motivated profiles."
+    },
+    "step3": {
+      "title": "Connect directly",
+      "description": "Reach out only to candidates who have already proven their worth through actions."
+    }
   }
 }
