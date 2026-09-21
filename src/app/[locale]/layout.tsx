@@ -29,11 +29,13 @@ export default async function PublicLayout({ children, params }: Props) {
 
   return (
     <>
-      <Script
-        id="cookie-consent"
-        src="//cdn.cookie-script.com/s/xxxx.js"
-        strategy="afterInteractive"
-      />
+      {process.env.NEXT_PUBLIC_COOKIE_SCRIPT && (
+        <Script
+          id="cookie-consent"
+          src={`//cdn.cookie-script.com/s/${process.env.NEXT_PUBLIC_COOKIE_SCRIPT}.js`}
+          strategy="afterInteractive"
+        />
+      )}
       <NextIntlClientProvider locale={locale}>
         <Header />
         <main>{children}</main>
