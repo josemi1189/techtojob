@@ -10,5 +10,23 @@
     "hero2": "No busques trabajo. Deja que te encuentren.",
     "hero3": "Participa en torneos, ayuda a otros desarrolladores, sé visible y deja que sean las empresas quienes te busquen a ti.",
     "btnAction": "Únete a nuestro Discord"
+  },
+  "Steps": {
+    "step1": {
+      "title": "Únete",
+      "description": "Entra en Discord y preséntate a la comunidad."
+    },
+    "step2": {
+      "title": "Muestra y colabora",
+      "description": "Comparte tus proyectos, colabora en torneos abiertos y resuelve dudas en la comunidad."
+    },
+    "step3": {
+      "title": "Deja que te descubran",
+      "description": "Recibe feedback, participa y deja que empresas y reclutadores te descubran."
+    },
+    "step4": {
+      "title": "Consigue tu oportunidad",
+      "description": "Convierte ese interés en entrevistas y consigue tu próximo trabajo."
+    }
   }
 }

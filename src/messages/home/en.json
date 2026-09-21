@@ -10,5 +10,23 @@
     "hero2": "Don't look for a job. Let it find you.",
     "hero3": "Join tournaments, help other developers, be visible and let companies come looking for you.",
     "btnAction": "Join our Discord"
+  },
+  "Steps": {
+    "step1": {
+      "title": "Join",
+      "description": "Hop into Discord and introduce yourself to the community."
+    },
+    "step2": {
+      "title": "Showcase and collaborate",
+      "description": "Share your projects, collaborate in open tournaments, and get your questions answered by the community."
+    },
+    "step3": {
+      "title": "Get discovered",
+      "description": "Get feedback, stay active, and let companies and recruiters discover you."
+    },
+    "step4": {
+      "title": "Land your opportunity",
+      "description": "Turn that interest into interviews and land your next job."
+    }
   }
 }
