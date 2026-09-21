@@ -26,7 +26,10 @@ const steps: Steps[] = [
 export const Steps: React.FC = async () => {
   const t = await getTranslations("Steps");
   return (
-    <section className="flex px-2 py-20 flex-col gap-6 items-center justify-center w-full bg-linear-to-b from-third/15 via-third/10 to-transparent">
+    <section
+      id="steps"
+      className="scroll-mt-20 flex px-2 py-20 flex-col gap-6 items-center justify-center w-full bg-linear-to-b from-third/15 via-third/10 to-transparent"
+    >
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">
         {t("title")}
       </h2>

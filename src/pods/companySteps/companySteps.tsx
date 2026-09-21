@@ -1,5 +1,6 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
+import { ContentDarkLayout } from "@/layout";
 
 interface Steps {
   title: string;
@@ -22,7 +23,7 @@ const steps: Steps[] = [
 export const CompanySteps: React.FC = async () => {
   const t = await getTranslations("CompanySteps");
   return (
-    <section className="flex px-2 py-20 flex-col gap-6 items-center justify-center w-full ">
+    <ContentDarkLayout id="company">
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">
         {t("title")}
       </h2>
@@ -44,6 +45,6 @@ export const CompanySteps: React.FC = async () => {
           </div>
         ))}
       </div>
-    </section>
+    </ContentDarkLayout>
   );
 };

@@ -1,11 +1,12 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ComputerPersonIcon, DoorIcon, LockIcon } from "@/common/atoms/icons";
+import { ContentLightLayout } from "@/layout";
 
 export const Talent: React.FC = async () => {
   const t = await getTranslations("talent");
   return (
-    <section className="flex flex-col gap-8 items-center px-2 py-10 md:px-20 md:py-20 bg-third/95">
+    <ContentLightLayout id="talent">
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">
         {t("title")}
       </h2>
@@ -41,6 +42,6 @@ export const Talent: React.FC = async () => {
           <p>{t("subtalent3")}</p>
         </div>
       </div>
-    </section>
+    </ContentLightLayout>
   );
 };
