@@ -1,32 +1,68 @@
 "use client";
-import Link from "next/link";
+
+import { useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
 import { MenuVM } from "@/config";
+import { Link, usePathname } from "@/i18n/navigation";
+import { cleanString } from "@/helpers/string";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 interface Props {
   itemsMenu: MenuVM[];
 }
+
+const normalize = (p?: string | null): string => {
+  if (!p) return "/";
+  // Quita prefijo de idioma (/es, /en...) y barra final
+  const clean = p.replace(/^\/[a-z]{2}(?=\/|$)/, "").replace(/\/$/, "");
+  return clean === "" ? "/" : clean;
+};
+
 export const DesktopNav: React.FC<Props> = ({ itemsMenu }) => {
   const t = useTranslations("Nav");
   const pathname = usePathname();
-  const setClassLinkActive = (to: string): string => {
-    if (to === pathname)
-      return "border-2 px-2 py-2 text-primary border-secondary bg-secondary rounded-lg";
 
-    return "border px-2 py-2 bg-primary border-secondary text-secondary hover:text-primary hover:border-secondary hover:bg-secondary rounded-lg";
+  const sectionIds = useMemo(
+    () =>
+      itemsMenu
+        .filter((item) => item.to === "#")
+        .map((item) => cleanString(t(item.label))),
+    [itemsMenu, t]
+  );
+
+  const activeSection = useActiveSection(sectionIds);
+
+  const isActive = (item: MenuVM): boolean => {
+    if (item.to === "#") {
+      return activeSection === cleanString(t(item.label));
+    }
+    // Enlaces de ruta (Inicio, etc.): activos solo si no hay sección activa
+    return activeSection === "" && normalize(item.to) === normalize(pathname);
   };
+
+  const commonClass =
+    "px-2 py-2 rounded-lg border-secondary/50 transition-colors";
+  const activeClass = `${commonClass} border-2 text-primary bg-secondary`;
+  const inactiveClass = `${commonClass} border bg-primary text-secondary hover:text-primary hover:bg-secondary`;
 
   return (
     <nav className="hidden sm:block">
-      <ul className="flex flex-row gap-4 ">
-        {itemsMenu.map((item) => (
-          <li key={t(item.label)} className={setClassLinkActive(item.to!)}>
-            <Link href={item.to!} title={item.label}>
-              {t(item.label)}
-            </Link>
-          </li>
-        ))}
+      <ul className="flex flex-row gap-4">
+        {itemsMenu.map((item) => {
+          const id = cleanString(t(item.label));
+          const active = isActive(item);
+          return (
+            <li key={id} className={active ? activeClass : inactiveClass}>
+              <Link
+                href={item.to === "#" ? `/#${id}` : item.to!}
+                title={item.label}
+                aria-current={active ? "true" : undefined}
+              >
+                {t(item.label)}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

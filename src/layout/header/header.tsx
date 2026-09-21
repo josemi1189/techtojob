@@ -9,8 +9,8 @@ import { MobileNav } from "./components";
 export const Header = async () => {
   const t = await getTranslations("Nav");
   return (
-    <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between min-h-20 bg-primary text-primary shadow-header text-[1.1rem] font-semibold px-1 md:px-12">
-      <div className="shrink-0 p-2">
+    <header className="sticky top-0 z-50 flex flex-col items-center justify-between min-h-32 bg-primary text-primary shadow-header text-[1.1rem] font-semibold px-1 md:px-12 py-2">
+      <div className="w-full flex flex-row justify-between items-center p-2">
         <Image
           src="/icon.svg"
           alt={t("logoAlt")}
@@ -27,14 +27,12 @@ export const Header = async () => {
           className="hidden h-auto w-72.5 sm:block"
           loading="lazy"
         />
-      </div>
-      <section className="flex shrink-0 flex-row items-center gap-5">
-        <DesktopNav itemsMenu={itemsMenu} />
-
         <SelectLanguages />
         <MobileNav items={itemsMenu} />
+      </div>
+      <section className="flex shrink-0 flex-row items-center">
+        <DesktopNav itemsMenu={itemsMenu} />
       </section>
-      {/*<div className="basis-full lg:basis-auto"></div>*/}
     </header>
   );
 };

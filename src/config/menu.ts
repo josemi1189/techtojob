@@ -8,8 +8,10 @@ export interface MenuVM {
 
 export const itemsMenu: MenuVM[] = [
   { label: "home", ariaLabel: "homeAriaLabel", to: ROUTES_CONFIG.home.es },
-  { label: "steps", ariaLabel: "stepsAriaLabel", to: "#steps" },
-  { label: "talent", ariaLabel: "talentAriaLabel", to: "#talent" },
-  { label: "company", ariaLabel: "companyAriaLabel", to: "#company" },
-  { label: "news", ariaLabel: "newsAriaLabel", to: ROUTES_CONFIG.news.es },
+  { label: "steps", ariaLabel: "stepsAriaLabel", to: "#" },
+  { label: "talent", ariaLabel: "talentAriaLabel", to: "#" },
+  { label: "company", ariaLabel: "companyAriaLabel", to: "#" },
+  { label: "tournaments", ariaLabel: "tournamentsAriaLabel", to: "#" },
+  { label: "community", ariaLabel: "communityAriaLabel", to: "#" },
+  { label: "news", ariaLabel: "newsAriaLabel", to: "#" },
 ];
