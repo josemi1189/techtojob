@@ -54,7 +54,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ items }) => {
       {/* Botón hamburguesa */}
       <button
         type="button"
-        className="group relative z-1001 flex flex-col gap-1.5 border-0 bg-transparent p-2.5 items-center sm:hidden"
+        className="group relative z-1001 flex flex-col gap-1.5 border-0 bg-transparent p-2.5 items-center md:hidden"
         onClick={toggleMenu}
         aria-label="Menú de navegación"
         aria-expanded={isOpen}
@@ -77,7 +77,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ items }) => {
 
       {/* Menú desplegable */}
       <nav
-        className={`fixed top-0 right-0 z-1000 h-screen w-60 overflow-y-auto bg-white shadow-[-2px_0_10px_#00000019] transition-transform duration-300 sm:hidden ${isOpen ? "translate-x-0" : "pointer-events-none translate-x-full"}`}
+        className={`fixed top-0 right-0 z-1000 h-screen w-60 overflow-y-auto bg-white shadow-[-2px_0_10px_#00000019] transition-transform duration-300 md:hidden ${isOpen ? "translate-x-0" : "pointer-events-none translate-x-full"}`}
       >
         <ul className="m-0 list-none pt-20">
           {items.map((item) => {
