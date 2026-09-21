@@ -12,9 +12,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   const nav = (await import(`@/messages/nav/${selectedLocale}.json`)).default;
   const home = (await import(`@/messages/home/${selectedLocale}.json`)).default;
+  const tournaments = (
+    await import(`@/messages/tournaments/${selectedLocale}.json`)
+  ).default;
 
   return {
     locale: selectedLocale,
-    messages: { ...nav, ...home },
+    messages: { ...nav, ...home, ...tournaments },
   };
 });

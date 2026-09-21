@@ -1,5 +1,6 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
+import { SectionProps } from "@/common/common.vm";
 
 interface Steps {
   title: string;
@@ -23,11 +24,11 @@ const steps: Steps[] = [
     description: "step4.description",
   },
 ];
-export const Steps: React.FC = async () => {
+export const Steps: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("Steps");
   return (
     <section
-      id="steps"
+      id={idNav}
       className="scroll-mt-20 flex px-2 py-20 flex-col gap-6 items-center justify-center w-full bg-linear-to-b from-third/15 via-third/10 to-transparent"
     >
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">

@@ -1,6 +1,7 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ContentDarkLayout } from "@/layout";
+import { SectionProps } from "@/common/common.vm";
 
 interface Steps {
   title: string;
@@ -20,10 +21,10 @@ const steps: Steps[] = [
     description: "step3.description",
   },
 ];
-export const CompanySteps: React.FC = async () => {
+export const CompanySteps: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("CompanySteps");
   return (
-    <ContentDarkLayout id="company">
+    <ContentDarkLayout id={idNav}>
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">
         {t("title")}
       </h2>

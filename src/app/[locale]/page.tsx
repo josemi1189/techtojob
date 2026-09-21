@@ -1,5 +1,7 @@
-import { Hero, Steps, Talent, CompanySteps } from "@/pods";
+import { cleanString } from "@/helpers/string";
+import { Hero, Steps, Talent, CompanySteps, Tournaments } from "@/pods";
 import type { NextPage } from "next";
+import { getTranslations } from "next-intl/server";
 
 interface HomePageProps {
   params: {
@@ -7,13 +9,15 @@ interface HomePageProps {
   };
 }
 
-const HomePage: NextPage<HomePageProps> = () => {
+const HomePage: NextPage<HomePageProps> = async () => {
+  const t = await getTranslations("Nav");
   return (
     <>
       <Hero />
-      <Steps />
-      <Talent />
-      <CompanySteps />
+      <Steps idNav={cleanString(t("steps"))} />
+      <Talent idNav={cleanString(t("talent"))} />
+      <CompanySteps idNav={cleanString(t("company"))} />
+      <Tournaments idNav={cleanString(t("tournaments"))} />
     </>
   );
 };

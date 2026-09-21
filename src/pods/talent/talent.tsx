@@ -2,11 +2,12 @@ import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ComputerPersonIcon, DoorIcon, LockIcon } from "@/common/atoms/icons";
 import { ContentLightLayout } from "@/layout";
+import { SectionProps } from "@/common/common.vm";
 
-export const Talent: React.FC = async () => {
+export const Talent: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("talent");
   return (
-    <ContentLightLayout id="talent">
+    <ContentLightLayout id={idNav}>
       <h2 className="text-5xl sm:text-6xl text-secondary font-black">
         {t("title")}
       </h2>

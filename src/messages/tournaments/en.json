@@ -1,0 +1,17 @@
+{
+  "Tournaments": {
+    "title": "Tournaments",
+    "subtitle": "Show your talent, win the community over with your solution, and bring it to life.",
+    "tournament": "Tournament",
+    "1": {
+      "title": "Logo and look for the official TechToJob website",
+      "subtitle": "Logo designs and visual ideas for the official TechToJob website",
+      "nameLink": "View rules on Discord"
+    },
+    "2": {
+      "title": "TechToJob official website",
+      "subtitle": "Development of the official TechToJob website",
+      "nameLink": "View rules on Discord"
+    }
+  }
+}
