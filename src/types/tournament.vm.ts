@@ -1,7 +1,4 @@
-import { LOCALES } from "@/constants";
-
-export type Locale = (typeof LOCALES)[number];
-export type LANGUAGES = Record<Locale, string>;
+import { LANGUAGES } from "@/i18n/request";
 export interface TournamentsVM {
   id: string;
   active: boolean;

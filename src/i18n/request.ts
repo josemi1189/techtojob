@@ -2,7 +2,8 @@
 import { LOCALES } from "@/constants";
 import { getRequestConfig } from "next-intl/server";
 
-type Locale = (typeof LOCALES)[number];
+export type Locale = (typeof LOCALES)[number];
+export type LANGUAGES = Record<Locale, string>;
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;

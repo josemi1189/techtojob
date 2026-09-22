@@ -1,4 +1,4 @@
-import { TournamentsVM } from "./tournament.vm";
+import { TournamentsVM } from "@/types";
 
 export const tournamentsData: TournamentsVM[] = [
   {

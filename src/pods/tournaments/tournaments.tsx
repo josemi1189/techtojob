@@ -1,9 +1,11 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
+import { Locale } from "@/i18n/request";
 import { ContentLightLayout } from "@/layout";
 import { TournamentDetail } from "./components";
-import { Locale, tournamentsData, TournamentsVM } from "@/content/tournaments";
+import { tournamentsData } from "@/content/tournaments";
 import { SectionProps } from "@/common";
+import { TournamentsVM } from "@/types";
 
 interface Props extends SectionProps {
   locale: Promise<Locale>;
