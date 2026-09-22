@@ -21,7 +21,12 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col gap-4 justify-between gap-x-4 p-4 items-center md:order-2">
           <nav>Enlaces redes sociales</nav>
-          <Button to="#" title={t("btnActionTitle")} internal={false} size="S">
+          <Button
+            to={process.env.NEXT_PUBLIC_LINK_DISCORD!}
+            title={t("btnActionTitle")}
+            internal={false}
+            size="S"
+          >
             {t("btnActionName")}
           </Button>
           {/* svg class: w-[2.4em] hover:text-accent hover:cursor-pointer */}

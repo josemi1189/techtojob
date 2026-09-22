@@ -24,7 +24,7 @@ export const Hero = () => {
           {t("hero3")}
         </p>
         <Button
-          to="#"
+          to={process.env.NEXT_PUBLIC_LINK_DISCORD!}
           title="Ir a comunidad de Discord"
           internal={false}
           size="L"
