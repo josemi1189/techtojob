@@ -1,12 +1,12 @@
 "server-only";
+import { LOCALES } from "@/constants";
 import { getRequestConfig } from "next-intl/server";
 
-const locales = ["es", "en"] as const;
-type Locale = (typeof locales)[number];
+type Locale = (typeof LOCALES)[number];
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;
-  const selectedLocale: Locale = locales.includes(locale as Locale)
+  const selectedLocale: Locale = LOCALES.includes(locale as Locale)
     ? (locale as Locale)
     : "es";
 

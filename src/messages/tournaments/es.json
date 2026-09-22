@@ -2,16 +2,6 @@
   "Tournaments": {
     "title": "Torneos",
     "subtitle": "Demuestra tu talento, convence a la comunidad con tu solución y haz que cobre vida.",
-    "tournament": "Torneo",
-    "1": {
-      "title": "Logo y apariencia para la web oficial de TechToJob",
-      "subtitle": "Diseños e ideas de logo y apariencia para la web oficial de TechToJob",
-      "nameLink": "Bases en Discord"
-    },
-    "2": {
-      "title": "Página oficial de TechToJob",
-      "subtitle": "Construcción de la web oficial de TechToJob",
-      "nameLink": "Bases en Discord"
-    }
+    "tournament": "Torneo"
   }
 }
