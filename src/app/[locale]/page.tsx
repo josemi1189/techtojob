@@ -1,6 +1,13 @@
-import { Locale } from "@/content/tournaments";
 import { cleanString } from "@/helpers/string";
-import { Hero, Steps, Talent, CompanySteps, Tournaments } from "@/pods";
+import { Locale } from "@/i18n/request";
+import {
+  Hero,
+  Steps,
+  Talent,
+  CompanySteps,
+  Tournaments,
+  Networking,
+} from "@/pods";
 import type { NextPage } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -20,6 +27,7 @@ const HomePage: NextPage<HomePageProps> = async ({ params }) => {
       <Talent idNav={cleanString(t("talent"))} />
       <CompanySteps idNav={cleanString(t("company"))} />
       <Tournaments idNav={cleanString(t("tournaments"))} locale={locale} />
+      <Networking idNav={cleanString(t("community"))} locale={locale} />
     </>
   );
 };
