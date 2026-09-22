@@ -1,8 +1,9 @@
 import React from "react";
-import { Locale, TournamentsVM } from "@/content/tournaments";
 import { Button } from "@/common/atoms/button";
+import { TournamentsVM } from "@/types";
 import { getTranslations } from "next-intl/server";
 import { pickLanguage as tLang } from "@/lib/localize";
+import { Locale } from "@/i18n/request";
 
 interface Props {
   tournament: TournamentsVM;

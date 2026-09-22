@@ -56,5 +56,10 @@
       "title": "Conecta de forma directa",
       "description": "Contacta solo con candidatos que ya han demostrado su valía con hechos."
     }
+  },
+  "News": {
+    "title": "Noticias",
+    "subtitle": "Novedades, debates destacados, eventos y oportunidades exclusivas de nuestra comunidad en Discord",
+    "btnAction": "Sigue leyendo"
   }
 }

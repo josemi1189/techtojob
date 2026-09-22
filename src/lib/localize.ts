@@ -1,10 +1,10 @@
-import { LANGUAGES, Locale } from "@/content/tournaments";
+import { Locale } from "@/i18n/request";
 
 const DEFAULT_LOCALE: Locale = "es";
 
-export const pickLanguage = (
-  value: Partial<LANGUAGES>,
+export const pickLanguage = <T>(
+  value: Partial<Record<Locale, T>>,
   locale: Locale
-): string => {
-  return value[locale] ?? value[DEFAULT_LOCALE] ?? "";
+): T => {
+  return (value[locale] ?? value[DEFAULT_LOCALE]) as T;
 };

@@ -56,5 +56,10 @@
       "title": "Connect directly",
       "description": "Reach out only to candidates who have already proven their worth through actions."
     }
+  },
+  "News": {
+    "title": "News",
+    "subtitle": "Highlights, community debates, events, and exclusive opportunities from our Discord community",
+    "btnAction": "Read more"
   }
 }
