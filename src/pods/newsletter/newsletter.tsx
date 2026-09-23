@@ -61,18 +61,18 @@ export const Newsletter: React.FC<SectionProps> = ({ idNav }) => {
               aria-label={
                 t("ariaLabelForm") || "Correo electrónico para la newsletter"
               }
-              className="w-full px-4 py-2.5 rounded-full border-2 border-secondary bg-transparent text-primary placeholder:text-primary/40
-        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary transition-all"
+              className={`w-full px-4 py-2.5 rounded-full border-2 border-secondary bg-transparent text-primary placeholder:text-primary/40
+        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary transition-all`}
             />
           </div>
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className="inline-flex items-center justify-center font-black rounded-full border-2 border-secondary
+            className={`inline-flex items-center justify-center font-black rounded-full border-2 border-secondary
       shadow-secondary/40 ring-4 ring-secondary/10 transition-colors duration-200 ease-out hover:text-third
       hover:bg-secondary hover:shadow-lg hover:shadow-secondary/40 focus-visible:outline-2
-      focus-visible:outline-offset-4 focus-visible:outline-secondary px-6 py-2.5 text-md shadow-md shrink-0 cursor-pointer disabled:opacity-50"
+      focus-visible:outline-offset-4 focus-visible:outline-secondary px-6 py-2.5 text-md shadow-md shrink-0 cursor-pointer disabled:opacity-50`}
           >
             {status === "loading"
               ? t("sending") || "Enviando..."

@@ -17,7 +17,7 @@ export const TournamentDetail: React.FC<Props> = async ({
   return (
     <article
       key={tournament.id}
-      className="flex flex-row gap-5 p-4 w-full h-fit border border-secondary/50 bg-secondary/10 rounded-lg"
+      className="flex flex-row gap-5 p-4 w-full max-w-6xl h-fit border border-secondary/50 bg-secondary/10 rounded-lg"
     >
       <div className="flex flex-row flex-wrap justify-between items-center w-full gap-4">
         <div>

@@ -14,13 +14,13 @@ export const Footer: React.FC = async () => {
 
   return (
     <footer className="px-3 py-3 bg-primary w-full h-20 min-h-fit shadow-footer gap-6 text-third">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl w-full lg:justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl w-full lg:mx-auto lg:justify-items-center">
         <SocialLinks />
         <SectionLinks listLink={talentLink} sectionName={"talent"} />
         <SectionLinks listLink={communityLink} sectionName={"community"} />
         <SectionLinks listLink={legalLink} sectionName={"legal"} />
       </div>
-      <div className="py-6 w-full text-sm text-third/80 text-right flex flex-row flex-wrap justify-between">
+      <div className="py-6 w-full text-sm text-third/80 text-center flex flex-row flex-wrap justify-center gap-4">
         <div>©{new Date().getFullYear()} TechToJob</div>
 
         <div>
