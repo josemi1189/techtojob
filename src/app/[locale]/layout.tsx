@@ -6,15 +6,14 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import { Header, Footer } from "@/layout";
 import { getTranslations } from "next-intl/server";
-import * as constants from "@/constants/constants";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const t = await getTranslations({ locale: locale, namespace: "Metadata" });
 
   return {
-    title: constants.appName,
+    title: t("title"),
     description: t("description"),
   };
 }
