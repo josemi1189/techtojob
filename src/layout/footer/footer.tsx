@@ -1,58 +1,39 @@
 import { Link } from "@/i18n/navigation";
-import { routes } from "@/config";
-import { useTranslations } from "next-intl";
-import { Button } from "@/common/atoms/button";
+import { SocialLinks } from "./components/social-links";
+import { SectionLinks } from "./components/section-links";
+import { itemsFooter } from "@/constants/constant-link";
+import { getTranslations } from "next-intl/server";
 
-export const Footer: React.FC = () => {
-  const t = useTranslations("Nav");
+export const Footer: React.FC = async () => {
+  const t = await getTranslations("HomePage");
+  const talentLink = itemsFooter.filter((item) => item.section === "talent");
+  const communityLink = itemsFooter.filter(
+    (item) => item.section === "community"
+  );
+  const legalLink = itemsFooter.filter((item) => item.section === "legal");
+
   return (
-    <footer className="flex flex-col items-center p-[0.8em] bg-primary w-full h-20 min-h-fit shadow-footer gap-[0.8em] text-third">
-      <div className="flex flex-col justify-around gap-4 w-full md:flex-row">
-        <div className="flex flex-col gap-y-2 md:flex-col md:order-1">
-          <span className="p-2 font-semibold uppercase">{t("pages")}</span>
-          <Link
-            href={routes.about}
-            title={t("aboutUs")}
-            aria-label={t("aboutUs")}
-            className="inline-flex items-center gap-2 hover:text-accent before:content-[''] before:inline-block before:w-3.75 before:h-3.75 before:bg-[url('/info.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
-          >
-            {t("aboutUs")}
-          </Link>
-        </div>
-        <div className="flex flex-col gap-4 justify-between gap-x-4 p-4 items-center md:order-2">
-          <nav>Enlaces redes sociales</nav>
-          <Button
-            to={process.env.NEXT_PUBLIC_LINK_DISCORD!}
-            title={t("btnActionTitle")}
-            internal={false}
-            size="S"
-          >
-            {t("btnActionName")}
-          </Button>
-          {/* svg class: w-[2.4em] hover:text-accent hover:cursor-pointer */}
-        </div>
-        <div className="flex flex-col gap-y-2 md:flex-col md:order-3">
-          <span className="p-2 font-semibold uppercase">LEGAL</span>
-          <Link
-            href={routes.cookies}
-            title={t("cookies")}
-            aria-label={t("cookies")}
-            className="inline-flex items-center gap-2 hover:text-accent before:content-[''] before:inline-block before:w-3.75 before:h-3.75 before:bg-[url('/info.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
-          >
-            {t("cookies")}
-          </Link>
-          <Link
-            href={routes.privacy}
-            title={t("privacy")}
-            aria-label={t("privacy")}
-            className="inline-flex items-center gap-2 hover:text-accent before:content-[''] before:inline-block before:w-3.75 before:h-3.75 before:bg-[url('/info.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
-          >
-            {t("privacy")}
-          </Link>
-        </div>
+    <footer className="px-3 py-3 bg-primary w-full h-20 min-h-fit shadow-footer gap-6 text-third">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl w-full lg:justify-items-center">
+        <SocialLinks />
+        <SectionLinks listLink={talentLink} sectionName={"talent"} />
+        <SectionLinks listLink={communityLink} sectionName={"community"} />
+        <SectionLinks listLink={legalLink} sectionName={"legal"} />
       </div>
-      <div className="text-primary text-[0.9rem] text-right">
-        <span>©{/*new Date().getFullYear()*/} TechToJob</span>
+      <div className="py-6 w-full text-sm text-third/80 text-right flex flex-row flex-wrap justify-between">
+        <div>©{new Date().getFullYear()} TechToJob</div>
+
+        <div>
+          {`${t("design")} `}
+          <Link
+            href="https://www.linkedin.com/in/josemglez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold"
+          >
+            José Miguel González
+          </Link>
+        </div>
       </div>
     </footer>
   );

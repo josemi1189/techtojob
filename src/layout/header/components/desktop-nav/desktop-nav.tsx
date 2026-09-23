@@ -54,7 +54,7 @@ export const DesktopNav: React.FC<Props> = ({ itemsMenu }) => {
           return (
             <li key={id} className={active ? activeClass : inactiveClass}>
               <Link
-                href={item.to === "#" ? `/#${id}` : item.to!}
+                href={item.to === "#" ? `/#${id}` : item.to}
                 title={item.label}
                 aria-current={active ? "true" : undefined}
               >
