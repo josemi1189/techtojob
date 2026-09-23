@@ -55,8 +55,8 @@ export async function generatePageMetadata(
       images: [
         {
           url: "/techtojob.svg",
-          width: 1200,
-          height: 630,
+          width: 614,
+          height: 340,
           alt: t("imageAlt"),
         },
       ],
