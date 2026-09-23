@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: "Metadata" });
-  const imageUrl = new URL("/techtojob.svg", process.env.NEXT_PUBLIC_BASE_URL);
+  const imageUrl = new URL("/techtojob.webp", process.env.NEXT_PUBLIC_BASE_URL);
 
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
