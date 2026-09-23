@@ -73,7 +73,13 @@
   "newsletter": {
     "title": "Newsletter",
     "subtitle": "No spam. We'll only send updates, events, and tournaments straight to your inbox.",
-    "placeholderInput": "email@email.com",
-    "btnAction": "Keep me informed"
+    "placeholderName": "Your name",
+    "placeholderEmail": "email@email.com",
+    "ariaLabelForm": "Email for the newsletter",
+    "btnAction": "Keep me informed",
+    "sending": "Sending",
+    "successMessage": "Thanks for subscribing! Check your inbox",
+    "errorMessage": "An error occurred. Please try again.",
+    "unsubscribeText": "No spam. You can unsubscribe anytime."
   }
 }

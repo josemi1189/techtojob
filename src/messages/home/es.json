@@ -70,10 +70,16 @@
     "viewProfile": "Ver perfil en",
     "viewExternalLink": "Ver enlace externo"
   },
-  "newsletter": {
+  "Newsletter": {
     "title": "Newsletter",
     "subtitle": "Nada de spam. Solo enviaremos las novedades, eventos y torneos directos a tu correo.",
-    "placeholderInput": "email@email.com",
-    "btnAction": "Quiero estar informado"
+    "placeholderName": "Tu nombre",
+    "placeholderEmail": "email@email.com",
+    "ariaLabelForm": "Correo electrónico para la newsletter",
+    "btnAction": "Quiero estar informado",
+    "sending": "Enviando",
+    "successMessage": "¡Gracias por suscribirte! Revisa tu bandeja de entrada",
+    "errorMessage": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+    "unsubscribeText": "Sin spam. Puedes cancelar tu suscripción cuando quieras."
   }
 }
