@@ -6,8 +6,7 @@ participation, real work, technical tournaments and direct conversations, not
 on sending a CV into an anonymous job board.
 
 The public website is built with Next.js, React, TypeScript and Tailwind CSS.
-It supports Spanish and English through `next-intl` and is intended to be
-deployed on Vercel.
+It supports Spanish and English through `next-intl`.
 
 ## Product scope
 
@@ -34,7 +33,8 @@ deadlines or unverified member and company numbers.
 - Next.js `16` with the App Router.
 - React `19` and TypeScript.
 - Tailwind CSS `4` with PostCSS.
-- `next-intl` for routing and server/client translations.
+- `next-intl` for routing and client translations.
+- `next-intl/server` for routing and server translations.
 - ESLint using the Next.js configuration.
 - Sora variable font through `@fontsource-variable/sora`.
 - Google Analytics and Cookie Script integrations prepared through Next.js.
@@ -152,10 +152,6 @@ This format and aspect ratio are intentional because WhatsApp and other social
 crawlers can crop wide assets in link previews. `NEXT_PUBLIC_BASE_URL` is used
 to produce absolute image URLs, which are required by most social crawlers.
 
-After changing social metadata or images, remember that social platforms cache
-previews. Test with a fresh URL or the platform's cache debugger before
-assuming a deployment has failed.
-
 ## Integrations
 
 ### Discord
@@ -186,29 +182,11 @@ still to be selected. Once selected, replace the current submission handler
 with a server-side integration and keep provider credentials out of
 `NEXT_PUBLIC_*` variables.
 
-## Deployment on Vercel
-
-1. Import the repository into Vercel.
-2. Select the Next.js framework preset.
-3. Configure the production environment variables from the table above.
-4. Use the default build command, or explicitly set `npm run build`.
-5. Set `NEXT_PUBLIC_BASE_URL` to the canonical public URL.
-6. Deploy and verify both `/es` and `/en` routes.
-
-For preview deployments, use the preview URL as `NEXT_PUBLIC_BASE_URL` only
-when testing social metadata against that deployment. Production metadata must
-always use the canonical production domain.
-
 ## Content and assets
 
 Static feature content is kept in `src/content`. Publicly served assets belong
 in `public` and can be referenced with root-relative paths such as
 `/techtojob-social.webp`.
-
-Decorative background images were generated with Gemini. Before publishing,
-replace placeholder testimonials and sample news entries with verified content
-from the community. Do not add fabricated member counts, company counts or
-employment guarantees.
 
 ## Validation checklist
 
@@ -229,6 +207,11 @@ Also verify:
   schedule are defined.
 - Production-only integrations are configured in Vercel, not committed to the
   repository.
+
+## Credits
+
+**Hero Image:** Generated with AI [Gemini](https://gemini.google.com/) on 2026-09-18 for the Hero component background. Royalty-free image.
+![Tech Community Hero](/public/hero.webp)
 
 ## License
 
