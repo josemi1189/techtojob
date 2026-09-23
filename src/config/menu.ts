@@ -5,7 +5,7 @@ export interface MenuVM {
   ariaLabel?: string;
   to: string;
 }
-
+/** Header navigation menu items */
 export const itemsMenu: MenuVM[] = [
   { label: "home", ariaLabel: "homeAriaLabel", to: ROUTES_CONFIG.home.es },
   { label: "steps", ariaLabel: "stepsAriaLabel", to: "#" },
