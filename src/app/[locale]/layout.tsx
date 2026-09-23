@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: "Metadata" });
+  const imageUrl = new URL("/techtojob.svg", process.env.NEXT_PUBLIC_BASE_URL);
 
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
@@ -19,13 +20,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: t("title"),
       description: t("description"),
-      images: ["/techtojob.svg"],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: t("imageAlt"),
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["/techtojob.svg"],
+      images: [imageUrl],
     },
   };
 }
