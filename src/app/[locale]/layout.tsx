@@ -13,8 +13,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale: locale, namespace: "Metadata" });
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
     title: t("title"),
     description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      images: ["/techtojob.svg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/techtojob.svg"],
+    },
   };
 }
 
