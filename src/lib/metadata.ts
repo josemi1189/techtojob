@@ -54,9 +54,9 @@ export async function generatePageMetadata(
       alternateLocale: localeKey === "en" ? "en_GB" : "es_ES",
       images: [
         {
-          url: "/techtojob.svg",
-          width: 614,
-          height: 340,
+          url: "/techtojob-social.webp",
+          width: 1200,
+          height: 1200,
           alt: t("imageAlt"),
         },
       ],
@@ -65,7 +65,7 @@ export async function generatePageMetadata(
       card: "summary_large_image",
       title: t("twitterTitle"),
       description: t("twitterDescription"),
-      images: ["/techtojob.svg"],
+      images: ["/techtojob-social.webp"],
     },
   };
 }

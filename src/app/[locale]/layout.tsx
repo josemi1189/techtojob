@@ -11,7 +11,10 @@ import type { Metadata } from "next";
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: "Metadata" });
-  const imageUrl = new URL("/techtojob.webp", process.env.NEXT_PUBLIC_BASE_URL);
+  const imageUrl = new URL(
+    "/techtojob-social.webp",
+    process.env.NEXT_PUBLIC_BASE_URL
+  );
 
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL!),
@@ -23,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: imageUrl,
-          width: 614,
-          height: 340,
+          width: 1200,
+          height: 1200,
           alt: t("imageAlt"),
         },
       ],
