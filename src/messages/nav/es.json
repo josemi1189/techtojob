@@ -13,6 +13,7 @@
     "community": "Comunidad",
     "communityAriaLabel": "Comunidad",
     "news": "Noticias",
+    "testimonials": "Testimonios",
     "aboutUs": "Sobre nosotros",
     "cookies": "Política de cookies",
     "privacy": "Política de privacidad",
@@ -21,6 +22,7 @@
     "btnChangeEN": "Cambia idioma a inglés",
     "btnChangeES": "Cambia idioma a español",
     "btnActionName": "Únete a Discord",
-    "btnActionTitle": "Ir a comunidad de Discord de TechToJob"
+    "btnActionTitle": "Ir a comunidad de Discord de TechToJob",
+    "btnCloseModal": "Cerrar modal"
   }
 }

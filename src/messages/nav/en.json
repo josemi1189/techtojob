@@ -13,6 +13,7 @@
     "community": "Community",
     "communityAriaLabel": "Community",
     "news": "News",
+    "testimonials": "Testimonials",
     "aboutUs": "About us",
     "cookies": "Cookies policy",
     "privacy": "Privacy policy",
@@ -21,6 +22,7 @@
     "btnChangeEN": "Change language to English",
     "btnChangeES": "Change language to Spanish",
     "btnActionName": "Join Discord",
-    "btnActionTitle": "Go to the TechToJob Discord community"
+    "btnActionTitle": "Go to the TechToJob Discord community",
+    "btnCloseModal": "Close modal"
   }
 }
