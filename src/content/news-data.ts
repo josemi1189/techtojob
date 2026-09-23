@@ -1,6 +1,5 @@
 import { News } from "@/types/news.vm";
 
-// Estructura JSON con las tres noticias de ejemplo en Español e Inglés
 export const newsData: News[] = [
   {
     id: 1,

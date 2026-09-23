@@ -1,6 +1,8 @@
 {
   "HomePage": {
-    "home": "HomePage"
+    "home": "HomePage",
+    "design": "Designed and developed by",
+    "footerDescription": "A community where professionals and companies connect through shared projects, technical tournaments, and direct, no-filter dealings."
   },
   "Metadata": {
     "description": ""
@@ -61,5 +63,17 @@
     "title": "News",
     "subtitle": "Highlights, community debates, events, and exclusive opportunities from our Discord community",
     "btnAction": "Read more"
+  },
+  "Testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Real stories from people who are already part of TechToJob",
+    "viewProfile": "View profile on",
+    "viewExternalLink": "View external link"
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "subtitle": "No spam. We'll only send updates, events, and tournaments straight to your inbox.",
+    "placeholderInput": "email@email.com",
+    "btnAction": "Keep me informed"
   }
 }
