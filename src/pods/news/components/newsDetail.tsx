@@ -23,7 +23,7 @@ export const NewsDetail: React.FC<Props> = ({ detail, publishDate }) => {
         <div className="flex flex-row justify-between">
           <div className="flex items-center gap-1 text-sm text-gray-500">
             <span aria-hidden="true">📅</span>
-            <time dateTime={dateToIso(publishDate)} className="text-primary/60">
+            <time dateTime={dateToIso(publishDate)} className="text-gray-600">
               {publishDate}
             </time>
           </div>

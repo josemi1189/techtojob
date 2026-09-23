@@ -21,7 +21,7 @@ export const TestimonialsDetail: React.FC<Props> = (props) => {
         <footer className="pt-2 border-t border-secondary/10 flex flex-row items-center justify-between gap-4">
           <div>
             <h3 className="font-bold text-primary text-lg">{testimony.name}</h3>
-            <p className="text-sm text-primary/60">{localizedContent.role}</p>
+            <p className="text-sm text-gray-600">{localizedContent.role}</p>
           </div>
 
           <Link
