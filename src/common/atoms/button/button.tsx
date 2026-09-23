@@ -33,7 +33,7 @@ export const Button: React.FC<React.PropsWithChildren<Props>> = (props) => {
   } = props;
 
   const defaultClass: string = `inline-flex items-center justify-center font-black rounded-full border-2 border-secondary
-      shadow-secondary/40 ring-4 ring-secondary/10 transition-transform transition-colors duration-200 ease-out
+      shadow-secondary/40 ring-4 ring-secondary/10 transition-colors duration-200 ease-out hover:text-third
       hover:-translate-y-0.5 hover:scale-105 hover:bg-primary/90 hover:shadow-lg hover:shadow-secondary/40 focus-visible:outline-2
       focus-visible:outline-offset-4 focus-visible:outline-secondary`;
 
