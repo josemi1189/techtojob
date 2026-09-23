@@ -10,7 +10,7 @@ export const PreFooter: React.FC = async () => {
     <ContentDarkLayout
       title={t("title")}
       subtitle={t("subtitle")}
-      className="scroll-mt-32 flex px-2 py-20 flex-col gap-16 items-center justify-center w-full max-w-6xl "
+      className="scroll-mt-32 flex px-2 py-30 flex-col gap-16 items-center justify-center w-full"
     >
       <div className="pt-6 w-fit">
         <Button
