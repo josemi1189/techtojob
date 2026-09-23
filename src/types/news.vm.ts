@@ -12,3 +12,9 @@ export interface News {
   es: LanguageContent;
   en: LanguageContent;
 }
+
+export interface ContentModalNews {
+  title: string;
+  content: string;
+  publishDate: string;
+}

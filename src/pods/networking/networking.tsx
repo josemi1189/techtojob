@@ -1,4 +1,4 @@
-import { SectionProps } from "@/common";
+import { SectionProps } from "@/types";
 import { ContentDarkLayout } from "@/layout";
 import React from "react";
 import { CategoriesNetworking } from "@/content/categories-networking";

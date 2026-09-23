@@ -1,7 +1,7 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ContentDarkLayout } from "@/layout";
-import { SectionProps } from "@/common/common.vm";
+import { SectionProps } from "@/types/common.vm";
 
 interface Steps {
   title: string;

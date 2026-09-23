@@ -1,6 +1,6 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
-import { SectionProps } from "@/common/common.vm";
+import { SectionProps } from "@/types";
 import { ContentDarkLayout } from "@/layout";
 
 interface Steps {

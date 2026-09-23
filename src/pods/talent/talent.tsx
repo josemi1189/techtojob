@@ -2,7 +2,7 @@ import React from "react";
 import { getTranslations } from "next-intl/server";
 import { ComputerPersonIcon, DoorIcon, LockIcon } from "@/common/atoms/icons";
 import { ContentLightLayout } from "@/layout";
-import { SectionProps } from "@/common/common.vm";
+import { SectionProps } from "@/types";
 
 export const Talent: React.FC<SectionProps> = async ({ idNav }) => {
   const t = await getTranslations("talent");

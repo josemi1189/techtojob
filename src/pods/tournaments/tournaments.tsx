@@ -4,8 +4,7 @@ import { Locale } from "@/i18n/request";
 import { ContentLightLayout } from "@/layout";
 import { TournamentDetail } from "./components";
 import { tournamentsData } from "@/content/tournaments";
-import { SectionProps } from "@/common";
-import { TournamentsVM } from "@/types";
+import { SectionProps, TournamentsVM } from "@/types";
 
 interface Props extends SectionProps {
   locale: Promise<Locale>;
