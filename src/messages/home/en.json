@@ -1,9 +1,4 @@
 {
-  "HomePage": {
-    "home": "HomePage",
-    "design": "Designed and developed by",
-    "footerDescription": "A community where professionals and companies connect through shared projects, technical tournaments, and direct, no-filter dealings."
-  },
   "Metadata": {
     "title": "TechToJob | Technology community and opportunities",
     "siteName": "TechToJob",
@@ -16,6 +11,7 @@
     "hero1": "Platform for developers and companies",
     "hero2": "Don't look for a job. Let it find you.",
     "hero3": "Join tournaments, help other developers, be visible and let companies come looking for you.",
+    "btnTitle": "Go to Discord community",
     "btnAction": "Join our Discord"
   },
   "Steps": {
@@ -75,7 +71,7 @@
     "viewProfile": "View profile on",
     "viewExternalLink": "View external link"
   },
-  "newsletter": {
+  "Newsletter": {
     "title": "Newsletter",
     "subtitle": "No spam. We'll only send updates, events, and tournaments straight to your inbox.",
     "placeholderName": "Your name",
@@ -86,5 +82,15 @@
     "successMessage": "Thanks for subscribing! Check your inbox",
     "errorMessage": "An error occurred. Please try again.",
     "unsubscribeText": "No spam. You can unsubscribe anytime."
+  },
+  "PreFooter": {
+    "title": "Be part of something big",
+    "subtitle": "Don't miss out!",
+    "btnTitle": "Go to the Discord community",
+    "btnAction": "Talk to the community"
+  },
+  "Footer": {
+    "design": "Designed and developed by",
+    "footerDescription": "A community where professionals and companies connect through shared projects, technical tournaments, and direct, no-filter dealings."
   }
 }

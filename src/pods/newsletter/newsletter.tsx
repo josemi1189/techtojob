@@ -48,8 +48,8 @@ export const Newsletter: React.FC<SectionProps> = ({ idNav }) => {
               aria-label={
                 t("ariaLabelForm") || "Correo electrónico para la newsletter"
               }
-              className="w-full px-4 py-2.5 rounded-full border-2 border-secondary bg-transparent text-primary placeholder:text-primary/40
-        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary transition-all"
+              className={`w-full px-4 py-2.5 rounded-full border-2 border-secondary bg-transparent text-primary placeholder:text-primary/40
+        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary transition-all`}
             />
 
             <input
@@ -98,9 +98,11 @@ export const Newsletter: React.FC<SectionProps> = ({ idNav }) => {
             {t("errorMessage")}
           </p>
         )}
-        <div className="flex flex-row gap-1 text-sm text-primary/90">
-          <LockIcon />
-          <span>{t("unsubscribeText")}</span>
+        <div className="flex w-full flex-row gap-2 text-sm text-primary/90">
+          <span className="flex shrink-0 items-center">
+            <LockIcon />
+          </span>
+          <span className="text-left">{t("unsubscribeText")}</span>
         </div>
       </section>
     </ContentLightLayout>

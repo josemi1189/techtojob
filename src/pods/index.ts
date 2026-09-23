@@ -8,3 +8,4 @@ export * from "./networking";
 export * from "./news";
 export * from "./testimonials";
 export * from "./newsletter";
+export * from "./preFooter";

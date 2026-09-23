@@ -7,25 +7,31 @@ import {
 import { SocialLinks, ItemsFooterProps } from "@/types";
 import { routes } from "@/config";
 
+export const LINK = {
+  discord: "https://discord.gg/h9FFgKdkRd",
+  linkedin: "https://www.linkedin.com/company/techtojob/",
+  twitter: "https://x.com/techtojob",
+  instagram: "https://www.instagram.com/techtojob",
+};
 export const socialLink: SocialLinks[] = [
   {
     name: "Discord",
-    profileLink: "https://discord.gg/h9FFgKdkRd",
+    profileLink: LINK.discord,
     icon: <DiscordIcon />,
   },
   {
     name: "LinkedIn",
-    profileLink: "https://www.linkedin.com/company/techtojob/",
+    profileLink: LINK.linkedin,
     icon: <LinkedinIcon />,
   },
   {
     name: "X",
-    profileLink: "https://x.com/techtojob",
+    profileLink: LINK.twitter,
     icon: <TwitterIcon />,
   },
   {
     name: "Instagram",
-    profileLink: "https://www.instagram.com/techtojob",
+    profileLink: LINK.instagram,
     icon: <InstagramIcon />,
   },
 ];

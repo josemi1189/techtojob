@@ -5,7 +5,7 @@ import { itemsFooter } from "@/constants/constant-link";
 import { getTranslations } from "next-intl/server";
 
 export const Footer: React.FC = async () => {
-  const t = await getTranslations("HomePage");
+  const t = await getTranslations("Footer");
   const talentLink = itemsFooter.filter((item) => item.section === "talent");
   const communityLink = itemsFooter.filter(
     (item) => item.section === "community"

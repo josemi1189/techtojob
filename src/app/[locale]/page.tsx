@@ -10,6 +10,7 @@ import {
   News,
   Testimonials,
   Newsletter,
+  PreFooter,
 } from "@/pods";
 import type { NextPage } from "next";
 import { getTranslations } from "next-intl/server";
@@ -34,6 +35,7 @@ const HomePage: NextPage<HomePageProps> = async ({ params }) => {
       <News idNav={cleanString(t("news"))} locale={locale} />
       <Testimonials idNav={cleanString(t("testimonials"))} locale={locale} />
       <Newsletter idNav={cleanString(t("newsletter"))} />
+      <PreFooter />
     </>
   );
 };

@@ -1,9 +1,4 @@
 {
-  "HomePage": {
-    "home": "Página principal",
-    "design": "Diseñado y desarrollado por",
-    "footerDescription": "Una comunidad donde profesionales y empresas conectan a través de proyectos compartidos, torneos técnicos y un trato directo sin filtros."
-  },
   "Metadata": {
     "title": "TechToJob | Comunidad tecnológica y oportunidades",
     "siteName": "TechToJob",
@@ -16,6 +11,7 @@
     "hero1": "Plataforma para desarrolladores y empresas",
     "hero2": "No busques trabajo. Deja que te encuentren.",
     "hero3": "Participa en torneos, ayuda a otros desarrolladores, sé visible y deja que sean las empresas quienes te busquen a ti.",
+    "btnTitle": "Ir a comunidad de Discord",
     "btnAction": "Únete a nuestro Discord"
   },
   "Steps": {
@@ -86,5 +82,15 @@
     "successMessage": "¡Gracias por suscribirte! Revisa tu bandeja de entrada",
     "errorMessage": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
     "unsubscribeText": "Sin spam. Puedes cancelar tu suscripción cuando quieras."
+  },
+  "PreFooter": {
+    "title": "Forma parte de algo grande",
+    "subtitle": "¡No te quedes fuera!",
+    "btnTitle": "Ir a la comunidad de Discord",
+    "btnAction": "Habla con la comunidad"
+  },
+  "Footer": {
+    "design": "Diseñado y desarrollado por",
+    "footerDescription": "Una comunidad donde profesionales y empresas conectan a través de proyectos compartidos, torneos técnicos y un trato directo sin filtros."
   }
 }
