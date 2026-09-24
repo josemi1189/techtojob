@@ -1,61 +1,307 @@
-# TechToJob
+# TechToJob — Landing Page
 
-TechToJob is a bilingual community platform where developers and technology
-companies connect before a job vacancy exists. The product is based on
-participation, real work, technical tournaments and direct conversations, not
-on sending a CV into an anonymous job board.
+> Plataforma web moderna de alto rendimiento que conecta talento tecnológico con empresas mediante procesos de comunidad, participación real y torneos técnicos, alejándose de los filtros tradicionales de CV.
 
-The public website is built with Next.js, React, TypeScript and Tailwind CSS.
-It supports Spanish and English through `next-intl`.
+![Next.js 16](https://img.shields.io/badge/Next.js-16.2.6-black?style=for-the-badge&logo=next.js)
+![React 19](https://img.shields.io/badge/React-19.2.3-61DAFB?style=for-the-badge&logo=react)
+![TypeScript 5](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss)
+![next-intl](https://img.shields.io/badge/next--intl-v4-FF5722?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge)
 
-## Product scope
+---
 
-The home page is composed of the following sections:
+## 📋 Tabla de Contenidos
 
-- Hero: explains the community and sends users to Discord.
-- How it works: describes the path from joining the community to finding an
-  opportunity through participation.
-- Talent: presents profiles with stack, level and availability.
-- Companies: explains how companies publish needs and review real profiles.
-- Tournaments: showcases practical challenges and their results.
-- Networking: highlights topic-based channels and professional connections.
-- News: displays community updates, events and tournament announcements.
-- Testimonials: presents member stories and profile links.
-- Newsletter: collects a name and email address for future communications.
-- Pre-footer call to action and footer navigation.
+- [Visión General](#-visión-general)
+- [Stack Tecnológico](#-stack-tecnológico)
+- [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
+- [Estructura de Directorios](#-estructura-de-directorios)
+- [Módulos e Implementaciones Clave](#-módulos-e-implementaciones-clave)
+  - [Internacionalización (i18n)](#1-sistema-de-internacionalización-i18n)
+  - [Layouts, metadata y SEO](#2-layouts-metadata-y-seo)
+  - [Componentes interactivos y UX](#3-componentes-interactivos-y-ux)
+  - [Design System & Estilos (Tailwind CSS v4)](#4-design-system--estilos-tailwind-css-v4)
+- [SEO, Metadatos y Accesibilidad](#-seo-metadatos-y-accesibilidad)
+- [Guía de Inicio Rápido](#-guía-de-inicio-rápido)
+  - [Requisitos Previos](#requisitos-previos)
+  - [Instalación y Ejecución](#instalación-y-ejecución)
+  - [Scripts Disponibles](#scripts-disponibles)
+- [Variables de Entorno](#-variables-de-entorno)
+- [Convenciones de Código y Buenas Prácticas](#-convenciones-de-código-y-buenas-prácticas)
 
-The main positioning is intentional: TechToJob is a community, not another
-job listing website. The site must not promise guaranteed employment, fixed
-deadlines or unverified member and company numbers.
+---
 
-## Technology stack
+## 🎯 Visión General
 
-- Next.js `16` with the App Router.
-- React `19` and TypeScript.
-- Tailwind CSS `4` with PostCSS.
-- `next-intl` for routing and client translations.
-- `next-intl/server` for routing and server translations.
-- ESLint using the Next.js configuration.
-- Sora variable font through `@fontsource-variable/sora`.
-- Google Analytics and Cookie Script integrations prepared through Next.js.
+**TechToJob** es una landing page bilingüe desarrollada con **Next.js (App Router)** y **React 19** para conectar talento tecnológico con empresas a través de comunidad, torneos técnicos, networking y oportunidades reales. La propuesta de valor del producto se centra en mostrar perfiles auténticos y capacidades prácticas, antes que depender únicamente de currículums tradicionales.
 
-## Requirements
+La aplicación combina una estética oscura con identidad visual moderna, navegación multiidioma, secciones estructuradas por contenido y componentes reutilizables para crear una experiencia clara, rápida y escalable.
 
-- Node.js compatible with the installed Next.js version.
-- npm.
-- Access to the environment variables described below for production builds.
+---
 
-## Getting started
+## 🛠 Stack Tecnológico
 
-Install dependencies:
+| Tecnología / Herramienta                                                                                          | Versión   | Propósito en el Proyecto                                                    |
+| :---------------------------------------------------------------------------------------------------------------- | :-------- | :-------------------------------------------------------------------------- |
+| **[Next.js](https://nextjs.org/)**                                                                                | `^16.2.6` | Framework React con App Router, server components y rendimiento optimizado. |
+| **[React](https://react.dev/)**                                                                                   | `19.2.3`  | Biblioteca base para interfaces reactivas y componentes modernos.           |
+| **[TypeScript](https://www.typescriptlang.org/)**                                                                 | `^5.9.3`  | Tipado estático estricto para mayor estabilidad y mantenibilidad.           |
+| **[Tailwind CSS](https://tailwindcss.com/)**                                                                      | `^4.3.3`  | Estilos rápidos y modernos con configuración basada en CSS.                 |
+| **[next-intl](https://next-intl-docs.vercel.app/)**                                                               | `^4.12.0` | Internacionalización con rutas locales y mensajes por idioma.               |
+| **[@fontsource-variable/sora](https://fontsource.org/fonts/sora)**                                                | `^5.3.0`  | Tipografía local para la identidad visual del proyecto.                     |
+| **[@next/third-parties](https://nextjs.org/docs/app/building-your-application/optimizing/third-party-libraries)** | `^16.2.6` | Integración orientada a analytics y terceros.                               |
 
-```bash
-npm ci
+---
+
+## 🏗 Arquitectura del Proyecto
+
+El proyecto sigue una arquitectura basada en Next.js App Router con enfoque **server-first**:
+
+1. **Rutas dinámicas por locale (`src/app/[locale]/`)**: toda la navegación pública vive bajo el segmento `[locale]` y se gestiona con `next-intl`.
+2. **Generación de rutas por idioma**: la configuración de locales está definida en `src/i18n/routing.ts` con `locales: ["es", "en"]` y `defaultLocale: "es"`.
+3. **Separación de responsabilidades**:
+   - **Server Components**: utilizados para layouts, contenido estructural y metadatos.
+   - **Client Components**: reservados para interacción de usuario, estado local y comportamientos del navegador.
+4. **Contenido modularizado**: cada sección principal está encapsulada en `src/pods`, mientras que el ensamblaje final se realiza en `src/app/[locale]/page.tsx`.
+
+---
+
+## 📂 Estructura de Directorios
+
+```plaintext
+techtojob/
+├── public/                           # Assets estáticos y recursos públicos
+│   ├── hero.webp                    # Imagen principal de la sección hero
+│   ├── techtojob-social.webp       # Meta social para Open Graph / Twitter
+│   └── robots.txt                  # Archivo de robots generado o estático
+├── src/
+│   ├── app/
+│   │   ├── [locale]/
+│   │   │   ├── layout.tsx           # Layout principal por locale con metadata
+│   │   │   ├── page.tsx             # Página de inicio: composición de secciones
+│   │   │   └── not-found.tsx        # Página fallback para rutas no encontradas
+│   │   ├── layout.tsx               # Layout raíz global
+│   │   ├── manifest.ts              # Manifest de la app
+│   │   ├── robots.ts                # Generación del archivo robots.txt
+│   │   └── globals.css              # Estilos globales, tema y utilidades
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── base/
+│   │   │   └── vendors/
+│   ├── common/
+│   │   ├── atoms/
+│   │   └── index.ts
+│   ├── config/
+│   │   ├── index.ts
+│   │   ├── menu.ts
+│   │   └── routes.ts
+│   ├── constants/
+│   │   ├── constant-link.tsx
+│   │   ├── constants.ts
+│   │   └── index.ts
+│   ├── content/
+│   │   ├── news-data.ts
+│   │   ├── testimonials-data.ts
+│   │   ├── categories-networking/
+│   │   └── tournaments/
+│   ├── helpers/
+│   │   └── string.ts
+│   ├── hooks/
+│   │   └── useActiveSection.ts
+│   ├── i18n/
+│   │   ├── navigation.ts
+│   │   ├── request.ts
+│   │   ├── routes-config.ts
+│   │   └── routing.ts
+│   ├── layout/
+│   │   ├── content-dark.layout.tsx
+│   │   ├── content-light.layout.tsx
+│   │   ├── footer/
+│   │   ├── header/
+│   │   └── index.ts
+│   ├── lib/
+│   │   ├── date-to-iso.ts
+│   │   ├── localize.ts
+│   │   └── metadata.ts
+│   ├── messages/
+│   │   ├── home/
+│   │   ├── nav/
+│   │   └── tournaments/
+│   ├── pods/
+│   │   ├── companySteps/
+│   │   ├── hero/
+│   │   ├── networking/
+│   │   ├── news/
+│   │   ├── newsletter/
+│   │   ├── preFooter/
+│   │   ├── selectLanguages/
+│   │   ├── steps/
+│   │   ├── talent/
+│   │   ├── testimonials/
+│   │   ├── tournaments/
+│   │   └── index.ts
+│   ├── types/
+│   │   ├── categories-networking.vm.ts
+│   │   ├── common.vm.ts
+│   │   ├── index.ts
+│   │   ├── news.vm.ts
+│   │   ├── testimonials.vm.ts
+│   │   └── tournament.vm.ts
+│   ├── proxy.ts
+│   └── ...
+├── .gitignore
+├── eslint.config.mjs
+├── LICENSE
+├── next-env.d.ts
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tsconfig.json
+└── ...
 ```
 
-Create a local environment file. The values below match the current project
-configuration; replace optional integration values with the credentials for
-the target environment:
+---
+
+## ⚡ Módulos e Implementaciones Clave
+
+### 1. Sistema de Internacionalización (i18n)
+
+El proyecto usa `next-intl` para soportar dos idiomas:
+
+- `es`: idioma principal y por defecto.
+- `en`: traducción en inglés.
+
+La configuración está centralizada en `src/i18n/routing.ts` y la carga de mensajes se gestiona a través de `src/i18n/request.ts`. Los textos se organizan por features y namespaces, especialmente en:
+
+```text
+src/messages/
+├── home/
+│   ├── en.json
+│   └── es.json
+├── nav/
+│   ├── en.json
+│   └── es.json
+└── tournaments/
+    ├── en.json
+    └── es.json
+```
+
+Esto facilita mantener consistencia entre idiomas y evitar duplicación de textos en componentes.
+
+### 2. Layouts, metadata y SEO
+
+La app usa una estructura de layout multilocale en `src/app/[locale]/layout.tsx`, donde se configuran:
+
+- provider de internacionalización `NextIntlClientProvider`
+- `Header` y `Footer`
+- metadatos abiertos para SEO
+- Open Graph y Twitter Card
+- integración opcional de Cookie Script y Google Analytics
+
+El helper de metadata se encuentra en `src/lib/metadata.ts`, con soporte para:
+
+- title y description
+- imágenes sociales
+- URLs absolutas con `NEXT_PUBLIC_BASE_URL`
+- alternancia entre idiomas
+
+### 3. Componentes interactivos y UX
+
+La página de inicio compone varias secciones en el orden real del producto:
+
+- `Hero`
+- `Steps`
+- `Talent`
+- `CompanySteps`
+- `Tournaments`
+- `Networking`
+- `News`
+- `Testimonials`
+- `Newsletter`
+- `PreFooter`
+
+Esto se hace desde `src/app/[locale]/page.tsx` y permite mantener la composición de la landing page clara y modular. Cada bloque vive en `src/pods` con su propia lógica y contenido estático o dinámico según el caso.
+
+### 4. Design System & Estilos (Tailwind CSS v4)
+
+La base visual del proyecto se trabaja con Tailwind CSS v4 y estilos globales en `src/assets/css/base/global-styles.css` y `src/assets/css/vendors/`. El proyecto usa un enfoque de diseño basado en:
+
+- superficie oscura con acentos teal
+- tipografía Sora
+- capas visuales consistentes
+- componentes reutilizables y layouts pensados para conversión
+
+La organización actual favorece mantener el estilo centralizado y reutilizable sin depender de configuraciones complejas heredadas.
+
+---
+
+## 🔍 SEO, Metadatos y Accesibilidad
+
+- **Metadatos dinámicos**: el layout por locale genera `title`, `description` y recursos sociales con `generateMetadata`.
+- **Open Graph y Twitter**: se usan imágenes de tamaño cuadrado para mejorar la aparición en redes sociales.
+- **Robots y manifest**: generados a través de `src/app/robots.ts` y `src/app/manifest.ts`.
+- **A11y**: la navegación y los elementos interactivos se estructuran con buenas prácticas semánticas, accesibilidad de enlaces y texto claro para contenido público.
+- **Performance**: la aplicación está pensada para ser ligera y mantener una estructura modular con baja carga de JS innecesario en varias secciones.
+
+---
+
+## 🚀 Guía de Inicio Rápido
+
+### Requisitos Previos
+
+- **Node.js**: versión compatible con la versión de Next.js instalada.
+- **npm**: recomendado `10.x` o superior.
+- **Git**: para clonar y gestionar el repositorio.
+
+### Instalación y Ejecución
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/josemi1189/techtojob.git
+   cd techtojob
+   ```
+
+2. **Instalar dependencias:**
+
+   ```bash
+   npm ci
+   ```
+
+3. **Configurar variables de entorno locales:**
+
+   ```env
+   NEXT_PUBLIC_BASE_URL="https://techtojob-omega.vercel.app/"
+   NEXT_PUBLIC_LINK_DISCORD="https://discord.gg/zRj82mvgE"
+   NEXT_PUBLIC_GA_ANALYTICS_ID=""
+   NEXT_PUBLIC_COOKIE_SCRIPT=""
+   ```
+
+4. **Iniciar el servidor de desarrollo:**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Abrir la aplicación:**
+   Navega a [http://localhost:3000](http://localhost:3000) y la app resolverá automáticamente el idioma según la configuración de `next-intl`.
+
+### Scripts Disponibles
+
+| Comando         | Descripción                                          |
+| :-------------- | :--------------------------------------------------- |
+| `npm run dev`   | Inicia la app en modo desarrollo con hot reload.     |
+| `npm run build` | Genera la build de producción optimizada.            |
+| `npm run start` | Sirve la aplicación compilada.                       |
+| `npm run lint`  | Ejecuta ESLint y validaciones de calidad del código. |
+
+---
+
+## 🌐 Variables de Entorno
+
+Puedes crear un archivo `.env.local` en la raíz del proyecto con los siguientes valores:
 
 ```env
 NEXT_PUBLIC_BASE_URL="https://techtojob-omega.vercel.app/"
@@ -64,155 +310,48 @@ NEXT_PUBLIC_GA_ANALYTICS_ID=""
 NEXT_PUBLIC_COOKIE_SCRIPT=""
 ```
 
-Start the development server:
+### Descripción de cada variable
 
-```bash
-npm run dev
+- `NEXT_PUBLIC_BASE_URL`: URL base del sitio para generación de rutas absolutas y metadatos sociales.
+- `NEXT_PUBLIC_LINK_DISCORD`: invitación pública de Discord para la comunidad.
+- `NEXT_PUBLIC_GA_ANALYTICS_ID`: ID de Google Analytics para entorno productivo.
+- `NEXT_PUBLIC_COOKIE_SCRIPT`: identificador del script de Cookies, si se desea activar en producción.
+
+> Si no se define una variable opcional, la app puede seguir funcionando en local con valores vacíos.
+
+---
+
+## 🎨 Variables de Color predefinidas en TailwindCSS
+
+En `src/assets/css/base/global-styles.css` se definen las variables de tema del proyecto dentro de `@theme`:
+
+```css
+@theme {
+  --color-primary: #2f3436;
+  --color-secondary: #84c0bf;
+  --color-third: #ffffff;
+  --color-accent: #e07a5f;
+  --shadow-header: 0px 0px 11px 4px #343d41;
+  --shadow-footer: 0px 0px 11px 4px #343d41;
+}
 ```
 
-The development server listens on `http://localhost:3000`.
+### Significado de cada variable
 
-## Available scripts
+- `--color-primary`: fondo principal oscuro, usado en la base visual del sitio.
+- `--color-secondary`: tono principal teal/acento de marca.
+- `--color-third`: blanco para superficies claras y texto sobre fondos oscuros.
+- `--color-accent`: acento coral para contrastes puntuales.
+- `--shadow-header` y `--shadow-footer`: sombras comunes para cabecera y pie de página.
 
-| Command         | Purpose                                                 |
-| --------------- | ------------------------------------------------------- |
-| `npm run dev`   | Starts Next.js in development mode on all interfaces.   |
-| `npm run build` | Creates the optimized production build.                 |
-| `npm run start` | Serves the production build. Run `npm run build` first. |
-| `npm run lint`  | Runs ESLint across the project.                         |
+## 📐 Convenciones de Código y Buenas Prácticas
 
-## Project structure
+1. **Traducciones consistentes**: si se añade una clave en `es`, debe existir una versión equivalente en `en`.
+2. **Modularización**: nuevas secciones deben añadirse preferiblemente dentro de `src/pods` y reutilizar patrones existentes.
+3. **SEO y metadata**: cualquier cambio relevante en títulos, descripción o imágenes sociales debe mantener coherencia con `src/lib/metadata.ts` y el layout por locale.
+4. **Validación pre-merge**: antes de mandar cambios, verificar que `npm run lint` y `npm run build` finalicen correctamente.
+5. **Credenciales y secretos**: no incluir tokens ni claves en el código o en archivos de configuración públicos.
 
-```text
-src/
-	app/                 Next.js routes, layouts and metadata
-		[locale]/          Localized public route and home page
-	assets/              Global CSS, reset and vendor styles
-	common/              Shared atoms, icons and reusable primitives
-	config/              Navigation, routes and application configuration
-	constants/           Shared constants and external links
-	content/             Static content for news, tournaments and categories
-	helpers/             Small pure helper functions
-	hooks/               Reusable React hooks
-	i18n/                Locale routing and request configuration
-	layout/              Header, footer and content layout primitives
-	lib/                 Shared utilities such as metadata and date formatting
-	messages/            Translation dictionaries grouped by feature
-	pods/                Page sections and feature-level components
-	types/               View-model and shared TypeScript types
-public/                Public images, icons and crawlable files
-```
+---
 
-The `pods` directory contains feature sections rather than route-level pages.
-The localized page composes those sections in this order:
-
-```text
-Hero -> Steps -> Talent -> CompanySteps -> Tournaments -> Networking
--> News -> Testimonials -> Newsletter -> PreFooter
-```
-
-## Internationalization
-
-The supported locales are:
-
-- `es`: default locale.
-- `en`: English translation.
-
-Locale routing is configured in `src/i18n/routing.ts` with
-`localePrefix: "as-needed"`. The request configuration validates the locale
-and dynamically loads the dictionaries from:
-
-```text
-src/messages/
-	nav/es.json       nav/en.json
-	home/es.json      home/en.json
-	tournaments/es.json  tournaments/en.json
-```
-
-When adding a user-facing string:
-
-1. Add the same translation key to both locale dictionaries.
-2. Read it with `useTranslations` in client components or
-   `getTranslations` in server components.
-3. Keep metadata strings in the `Metadata` namespace.
-
-## SEO and social metadata
-
-Localized metadata is generated in `src/app/[locale]/layout.tsx`. The
-reusable helper in `src/lib/metadata.ts` supports page titles, descriptions,
-keywords, alternate languages and Open Graph/Twitter data.
-
-Social previews use the square WebP asset:
-
-```text
-/techtojob-social.webp
-```
-
-This format and aspect ratio are intentional because WhatsApp and other social
-crawlers can crop wide assets in link previews. `NEXT_PUBLIC_BASE_URL` is used
-to produce absolute image URLs, which are required by most social crawlers.
-
-## Integrations
-
-### Discord
-
-The public Discord invitation is configured through
-`NEXT_PUBLIC_LINK_DISCORD` and currently points to:
-
-```text
-https://discord.gg/zRj82mvgE
-```
-
-### Google Analytics
-
-The Google Analytics component is already wired into the localized layout.
-Set `NEXT_PUBLIC_GA_ANALYTICS_ID` in Vercel to enable the production property.
-Leave it empty in local development when analytics are not required.
-
-### Cookie Script
-
-Cookie Script is conditionally loaded when `NEXT_PUBLIC_COOKIE_SCRIPT` has a
-value. Keep it empty until the production script identifier is available.
-
-### Newsletter
-
-The newsletter UI, validation state and success/error feedback are prepared in
-`src/pods/newsletter/newsletter.tsx`. The external email provider or API is
-still to be selected. Once selected, replace the current submission handler
-with a server-side integration and keep provider credentials out of
-`NEXT_PUBLIC_*` variables.
-
-## Content and assets
-
-Static feature content is kept in `src/content`. Publicly served assets belong
-in `public` and can be referenced with root-relative paths such as
-`/techtojob-social.webp`.
-
-## Validation checklist
-
-Before opening a pull request or deploying:
-
-```bash
-npm run lint
-npm run build
-```
-
-Also verify:
-
-- Spanish and English routes render correctly.
-- All translation keys exist in both locales.
-- Discord links point to the current invitation.
-- Open Graph and Twitter metadata contain an absolute WebP image URL.
-- The newsletter does not claim an email frequency until the provider and
-  schedule are defined.
-- Production-only integrations are configured in Vercel, not committed to the
-  repository.
-
-## Credits
-
-**Hero Image:** Generated with AI [Gemini](https://gemini.google.com/) on 2026-09-18 for the Hero component background. Royalty-free image.
-![Tech Community Hero](/public/hero.webp)
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE).
+Todos los derechos reservados © 2026. - José Miguel González
