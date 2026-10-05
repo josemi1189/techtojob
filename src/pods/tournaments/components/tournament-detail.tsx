@@ -3,7 +3,7 @@ import { Button } from "@/common/atoms/button";
 import { TournamentsVM } from "@/types";
 import { getTranslations } from "next-intl/server";
 import { pickLanguage as tLang } from "@/lib/localize";
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 
 interface Props {
   tournament: TournamentsVM;

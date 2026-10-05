@@ -1,7 +1,7 @@
 import React from "react";
 import { ContentLightLayout } from "@/layout";
 import { newsData } from "@/content/news-data";
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 import { getTranslations } from "next-intl/server";
 import { NewsCard } from "./components";
 import * as VM from "@/types";

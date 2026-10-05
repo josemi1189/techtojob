@@ -1,6 +1,6 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 import { ContentLightLayout } from "@/layout";
 import { TournamentDetail } from "./components";
 import { tournamentsData } from "@/content/tournaments";

@@ -2,7 +2,7 @@ import { SectionProps } from "@/types";
 import { ContentDarkLayout } from "@/layout";
 import React from "react";
 import { CategoriesNetworking } from "@/content/categories-networking";
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 import { CategoryTitle, CategoryDetail } from "./components";
 
 interface Props extends SectionProps {

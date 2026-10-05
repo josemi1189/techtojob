@@ -1,4 +1,4 @@
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 
 const DEFAULT_LOCALE: Locale = "es";
 

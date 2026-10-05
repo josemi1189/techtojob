@@ -1,10 +1,13 @@
-import { LANGUAGES } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
+
+type TranslatedText = Record<Locale, string>;
+
 export interface TournamentsVM {
   id: string;
   active: boolean;
-  title: LANGUAGES;
-  subtitle: LANGUAGES;
-  linkLabel: LANGUAGES;
+  title: TranslatedText;
+  subtitle: TranslatedText;
+  linkLabel: TranslatedText;
   urlLink: string;
   state: "upcoming" | "building" | "voting" | "closed" | "completed";
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { NewsContent } from "./newsContent";
 import { NewsDetail } from "./newsDetail";
 import { pickLanguage } from "@/lib/localize";
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 import * as VM from "@/types";
 
 interface Props {

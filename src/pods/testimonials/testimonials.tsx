@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionProps } from "@/types";
-import { Locale } from "@/i18n/request";
+import type { Locale } from "@/i18n/locales";
 import { ContentDarkLayout } from "@/layout";
 import { getTranslations } from "next-intl/server";
 import { testimonialsData } from "@/content/testimonials-data";
