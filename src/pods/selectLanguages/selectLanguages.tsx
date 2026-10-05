@@ -1,35 +1,46 @@
 "use client";
 import { Link, usePathname } from "@/i18n/navigation";
-import { FlagEsIcon, FlagEnIcon } from "@/common/atoms/icons";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export const SelectLanguages: React.FC = () => {
   const pathname = usePathname();
+  const locale = useLocale();
   const t = useTranslations("Nav");
 
+  const linkClasses = `grid min-h-8 min-w-10 place-items-center rounded-[50%] text-xs font-bold tracking-wider
+      text-primary no-underline transition-colors duration-[160ms] ease-in-out hover:bg-secondary
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+        motion-reduce:transition-none aria-[current=page]:bg-primary aria-[current=page]:text-white 
+        aria-[current=page]:hover:bg-primary`;
+
   return (
-    <div className="flex w-fit shrink-0 flex-row gap-4">
+    <nav
+      className="flex items-center gap-1 p-1 rounded-full border border-primary bg-third"
+      aria-label={t("languageSelector")}
+    >
       <Link
-        className="shrink-0 border-0 bg-primary"
+        className={linkClasses}
         href={pathname}
         locale="es"
         scroll={false}
         hrefLang="es"
         aria-label={t("btnChangeES")}
+        aria-current={locale === "es" ? "page" : undefined}
       >
-        <FlagEsIcon />
+        ES
       </Link>
 
       <Link
-        className="shrink-0 border-0 bg-primary"
+        className={linkClasses}
         href={pathname}
         locale="en"
         scroll={false}
         hrefLang="en"
         aria-label={t("btnChangeEN")}
+        aria-current={locale === "en" ? "page" : undefined}
       >
-        <FlagEnIcon />
+        EN
       </Link>
-    </div>
+    </nav>
   );
 };
