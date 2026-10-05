@@ -74,6 +74,7 @@ El proyecto sigue una arquitectura basada en Next.js App Router con enfoque **se
 techtojob/
 ├── public/                           # Assets estáticos y recursos públicos
 │   ├── hero.webp                    # Imagen principal de la sección hero
+│   ├── hero-community.svg            # Ilustración comunitaria del hero
 │   ├── techtojob-social.webp       # Meta social para Open Graph / Twitter
 │   └── robots.txt                  # Archivo de robots generado o estático
 ├── src/
@@ -167,6 +168,10 @@ techtojob/
 ---
 
 ## ⚡ Módulos e Implementaciones Clave
+
+### Créditos visuales
+
+`hero-community.svg` es una ilustración SVG original creada para TechToJob. No utiliza imágenes, iconos ni recursos gráficos de terceros.
 
 ### 1. Sistema de Internacionalización (i18n)
 
