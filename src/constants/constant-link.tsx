@@ -6,32 +6,27 @@ import {
 } from "@/common/atoms/icons/social";
 import { SocialLinks, ItemsFooterProps } from "@/types";
 import { routes } from "@/config";
+import { LINKS } from "@/constants";
 
-export const LINK = {
-  discord: "https://discord.gg/h9FFgKdkRd",
-  linkedin: "https://www.linkedin.com/company/techtojob/",
-  twitter: "https://x.com/techtojob",
-  instagram: "https://www.instagram.com/techtojob",
-};
 export const socialLink: SocialLinks[] = [
   {
     name: "Discord",
-    profileLink: LINK.discord,
+    profileLink: LINKS.discord,
     icon: <DiscordIcon />,
   },
   {
     name: "LinkedIn",
-    profileLink: LINK.linkedin,
+    profileLink: LINKS.linkedin,
     icon: <LinkedinIcon />,
   },
   {
     name: "X",
-    profileLink: LINK.twitter,
+    profileLink: LINKS.twitter,
     icon: <TwitterIcon />,
   },
   {
     name: "Instagram",
-    profileLink: LINK.instagram,
+    profileLink: LINKS.instagram,
     icon: <InstagramIcon />,
   },
 ];

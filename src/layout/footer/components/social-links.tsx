@@ -1,5 +1,5 @@
 import { Button } from "@/common/atoms/button";
-import { socialLink } from "@/constants/constant-link";
+import { socialLink, LINKS } from "@/constants";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 
@@ -17,7 +17,7 @@ export const SocialLinks: React.FC = async () => {
       </nav>
       <div className="w-fit">
         <Button
-          to={process.env.NEXT_PUBLIC_LINK_DISCORD!}
+          to={LINKS.discord}
           title={t("btnActionTitle")}
           internal={false}
           size="S"
