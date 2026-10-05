@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/common/molecules/scroll-reveal";
 export const Hero = () => {
   const t = useTranslations("Hero");
   return (
-    <section className="relative isolate flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-secondary/15 px-4 py-24 text-white sm:px-8 md:rounded-4xl md:px-12 lg:py-32">
+    <section className="relative isolate flex min-h-dvh w-full flex-col items-center justify-start overflow-hidden rounded-3xl border border-secondary/15 px-4 py-14 text-white sm:px-8 md:rounded-4xl md:justify-center md:px-12">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center"
@@ -20,7 +20,7 @@ export const Hero = () => {
         aria-hidden="true"
         className="hero-glow absolute -right-24 -top-28 -z-10 size-96 rounded-full bg-secondary/15 blur-3xl"
       />
-      <ScrollReveal className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-7 text-white">
+      <ScrollReveal className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-5 text-white">
         <span className="inline-flex items-center text-center rounded-full border border-secondary/40 bg-secondary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
           {t("hero1")}
         </span>
@@ -38,7 +38,7 @@ export const Hero = () => {
         </p>
         <Button
           to={CONSTANT.LINKS.discord}
-          title="Ir a comunidad de Discord"
+          title={t("btnTitle")}
           internal={false}
           size="L"
         >
