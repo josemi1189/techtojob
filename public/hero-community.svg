@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="scene" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#263638"/>
+      <stop offset=".5" stop-color="#344548"/>
+      <stop offset="1" stop-color="#202A2D"/>
+    </linearGradient>
+    <radialGradient id="centerShade" cx="0" cy="0" r="1" gradientTransform="matrix(0 492 -821 0 800 450)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F3436" stop-opacity=".06"/>
+      <stop offset=".65" stop-color="#2F3436" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2F3436" stop-opacity=".58"/>
+    </radialGradient>
+    <linearGradient id="avatar" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A8D9D5"/>
+      <stop offset="1" stop-color="#648F91"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <g id="person">
+      <circle r="45" fill="#263638" stroke="#A8D9D5" stroke-opacity=".42" stroke-width="2"/>
+      <circle cy="-9" r="11" fill="url(#avatar)"/>
+      <path d="M-23 25c2-15 11-23 23-23s21 8 23 23c-6 7-14 11-23 11s-17-4-23-11Z" fill="url(#avatar)" fill-opacity=".82"/>
+    </g>
+    <g id="code">
+      <circle r="31" fill="#263638" stroke="#E5A18C" stroke-opacity=".52" stroke-width="2"/>
+      <path d="m-7-10-10 10 10 10m14-20L17 0 7 10" stroke="#E5A18C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+    <g id="spark">
+      <circle r="4" fill="#A8D9D5"/>
+      <circle r="12" fill="#A8D9D5" fill-opacity=".28" filter="url(#softGlow)"/>
+    </g>
+  </defs>
+
+  <path fill="url(#scene)" d="M0 0h1600v900H0z"/>
+  <g stroke="#A8D9D5" stroke-opacity=".25" stroke-width="2">
+    <path d="M0 206h183l94 94h112m-389 378h188l98-98h116"/>
+    <path d="M1600 180h-176l-99 99h-106m381 416h-202l-87-87h-110"/>
+    <path d="M182 206v-72m207 166 72-1m-385 379v80m214-178h94"/>
+    <path d="m1424 180-1-67m-205 166-82 1m381 415v79m-202-166h-80"/>
+  </g>
+  <g fill="#A8D9D5" fill-opacity=".5">
+    <circle cx="183" cy="206" r="5"/><circle cx="277" cy="300" r="5"/>
+    <circle cx="188" cy="678" r="5"/><circle cx="286" cy="580" r="5"/>
+    <circle cx="1424" cy="180" r="5"/><circle cx="1325" cy="279" r="5"/>
+    <circle cx="1422" cy="695" r="5"/><circle cx="1335" cy="608" r="5"/>
+  </g>
+
+  <g opacity=".72">
+    <use href="#person" x="183" y="206"/>
+    <g transform="translate(389 300) scale(.78)"><use href="#person"/></g>
+    <g transform="translate(188 678) scale(.88)"><use href="#person"/></g>
+    <g transform="translate(405 580) scale(.72)"><use href="#person"/></g>
+    <g transform="translate(1424 180) scale(.84)"><use href="#person"/></g>
+    <g transform="translate(1219 279) scale(.72)"><use href="#person"/></g>
+    <g transform="translate(1422 695) scale(.78)"><use href="#person"/></g>
+    <g transform="translate(1237 608) scale(.9)"><use href="#person"/></g>
+  </g>
+  <g opacity=".68">
+    <use href="#code" x="277" y="300"/>
+    <use href="#code" x="286" y="580"/>
+    <use href="#code" x="1325" y="279"/>
+    <use href="#code" x="1335" y="608"/>
+  </g>
+
+  <g opacity=".65">
+    <use href="#spark" x="535" y="210"/>
+    <use href="#spark" x="1064" y="223"/>
+    <use href="#spark" x="492" y="716"/>
+    <use href="#spark" x="1106" y="694"/>
+  </g>
+  <path fill="url(#centerShade)" d="M0 0h1600v900H0z"/>
+</svg>

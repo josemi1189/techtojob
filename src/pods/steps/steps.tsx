@@ -32,13 +32,13 @@ export const Steps: React.FC<SectionProps> = async ({ idNav }) => {
       id={idNav}
       title={t("title")}
       subtitle={t("subtitle")}
-      className="scroll-mt-32 flex px-2 py-20 flex-col gap-6 items-center justify-center w-full bg-linear-to-b from-third/15 via-third/10 to-transparent"
+      className="scroll-mt-32 flex w-full flex-col items-center justify-center gap-8 bg-linear-to-b from-third/15 via-third/10 to-transparent px-4 py-24 sm:px-6 sm:py-28 lg:py-32"
     >
       <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-16 w-full justify-center max-w-6xl gap-10">
         {steps.map((step) => (
           <div
             key={step.title}
-            className="flex w-72 h-58 flex-col justify-self-center  rounded-xl border border-third/10 bg-third/5 p-4 text-left"
+            className="reveal-card flex h-58 w-72 flex-col justify-self-center rounded-2xl border border-third/10 bg-third/5 p-5 text-left shadow-lg shadow-black/5 transition duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:bg-third/10 motion-reduce:transition-none"
           >
             <p className="text-md uppercase tracking-[0.2em] text-secondary">
               {t(step.title)}

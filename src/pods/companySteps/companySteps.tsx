@@ -29,7 +29,7 @@ export const CompanySteps: React.FC<SectionProps> = async ({ idNav }) => {
         {steps.map((step) => (
           <div
             key={step.title}
-            className="flex w-72 h-56 flex-col justify-self-center rounded-xl border border-third/10 bg-third/10 p-4 text-left"
+            className="reveal-card flex h-56 w-72 flex-col justify-self-center rounded-2xl border border-third/10 bg-third/10 p-5 text-left shadow-lg shadow-black/5 transition duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:bg-third/15 motion-reduce:transition-none"
           >
             <p className="text-md uppercase tracking-[0.2em] text-secondary">
               {t(step.title)}

@@ -30,7 +30,7 @@ export const Newsletter: React.FC<SectionProps> = ({ idNav }) => {
   };
   return (
     <ContentLightLayout title={t("title")} subtitle="" id={idNav}>
-      <section className="flex flex-col items-center gap-10 w-3xl max-w-full text-center text-balance px-5 py-8 bg-black/5 border border-primary/90 rounded-2xl">
+      <section className="reveal-card flex w-3xl max-w-full flex-col items-center gap-10 rounded-2xl border border-primary/15 bg-black/5 px-5 py-10 text-center text-balance shadow-xl shadow-primary/10 sm:px-8 lg:py-12">
         <span className="text-2xl leading-12 text-primary/80 font-bold">
           {t("subtitle")}
         </span>

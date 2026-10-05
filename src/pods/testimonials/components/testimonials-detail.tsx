@@ -12,7 +12,7 @@ export const TestimonialsDetail: React.FC<Props> = (props) => {
   const { testimony, localizedContent, platformConfig, ariaLabelText } = props;
 
   return (
-    <li key={testimony.id} className="w-full">
+    <li key={testimony.id} className="reveal-card w-full">
       <article className="flex flex-col justify-between p-4 rounded-xl bg-third shadow-md">
         <p className="text-base leading-relaxed text-primary/90 italic pb-2">
           {localizedContent.testimonial}

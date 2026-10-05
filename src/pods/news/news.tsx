@@ -19,7 +19,7 @@ export const News: React.FC<Props> = async ({ idNav, locale }) => {
     <ContentLightLayout title={t("title")} subtitle={t("subtitle")} id={idNav}>
       <ul className="py-10 px-2 flex flex-row flex-wrap justify-center md:justify-around w-full max-w-6xl gap-6">
         {data.map((newsItem) => (
-          <li key={newsItem.id}>
+          <li key={newsItem.id} className="reveal-card">
             <NewsCard newsItem={newsItem} resolvedLocale={resolvedLocale} />
           </li>
         ))}

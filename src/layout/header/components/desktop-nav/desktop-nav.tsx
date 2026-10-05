@@ -41,13 +41,13 @@ export const DesktopNav: React.FC<Props> = ({ itemsMenu }) => {
   };
 
   const commonClass =
-    "px-2 py-2 rounded-lg border-secondary/50 transition-colors text-sm lg:text-lg font-extrabold";
+    "whitespace-nowrap rounded-lg border-secondary/50 px-1.5 py-2 text-[0.65rem] font-extrabold transition-colors sm:px-2 sm:text-xs lg:text-sm";
   const activeClass = `${commonClass} border-2 text-primary bg-secondary`;
   const inactiveClass = `${commonClass} border bg-primary text-secondary hover:text-primary hover:bg-secondary`;
 
   return (
     <nav className="hidden md:block">
-      <ul className="flex flex-row gap-2">
+      <ul className="flex flex-nowrap flex-row gap-1 lg:gap-2">
         {itemsMenu.map((item) => {
           const id = cleanString(t(item.label));
           const active = isActive(item);

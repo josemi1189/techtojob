@@ -9,7 +9,7 @@ export const Talent: React.FC<SectionProps> = async ({ idNav }) => {
   return (
     <ContentLightLayout id={idNav} title={t("title")} subtitle={t("subtitle")}>
       <div className="flex flex-col gap-5 py-4 px-1 w-full h-fit max-w-6xl">
-        <div>
+        <div className="reveal-card rounded-2xl border border-primary/10 bg-white/70 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none">
           <h3 className="flex items-center gap-2 py-2 text-xl font-semibold">
             <span className="text-secondary text-3xl">
               <ComputerPersonIcon />
@@ -18,7 +18,7 @@ export const Talent: React.FC<SectionProps> = async ({ idNav }) => {
           </h3>
           <p>{t("subtalent1")}</p>
         </div>
-        <div>
+        <div className="reveal-card rounded-2xl border border-primary/10 bg-white/70 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none">
           <h3 className="flex items-center gap-2 py-2 text-xl font-semibold">
             <span className="text-secondary text-3xl">
               <DoorIcon />
@@ -27,7 +27,7 @@ export const Talent: React.FC<SectionProps> = async ({ idNav }) => {
           </h3>
           <p>{t("subtalent2")}</p>
         </div>
-        <div>
+        <div className="reveal-card rounded-2xl border border-primary/10 bg-white/70 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none">
           <h3 className="flex items-center gap-2 py-2 text-xl font-semibold">
             <span className="text-secondary text-3xl">
               <LockIcon />
