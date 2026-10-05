@@ -1,24 +1,20 @@
 "server-only";
-import { LOCALES } from "@/constants";
-import { getRequestConfig } from "next-intl/server";
 
-export type Locale = (typeof LOCALES)[number];
-export type LANGUAGES = Record<Locale, string>;
+import { getRequestConfig } from "next-intl/server";
+import { isLocale, type Locale } from "./locales";
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;
-  const selectedLocale: Locale = LOCALES.includes(locale as Locale)
-    ? (locale as Locale)
-    : "es";
+  const selectedLocale: Locale = isLocale(locale) ? locale : "es";
 
-  const nav = (await import(`@/messages/nav/${selectedLocale}.json`)).default;
-  const home = (await import(`@/messages/home/${selectedLocale}.json`)).default;
-  const tournaments = (
-    await import(`@/messages/tournaments/${selectedLocale}.json`)
-  ).default;
+  const [nav, home, tournaments] = await Promise.all([
+    import(`@/messages/nav/${selectedLocale}.json`),
+    import(`@/messages/home/${selectedLocale}.json`),
+    import(`@/messages/tournaments/${selectedLocale}.json`),
+  ]);
 
   return {
     locale: selectedLocale,
-    messages: { ...nav, ...home, ...tournaments },
+    messages: { ...nav.default, ...home.default, ...tournaments.default },
   };
 });
