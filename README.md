@@ -287,7 +287,6 @@ La organización actual favorece mantener el estilo centralizado y reutilizable 
 
    ```env
    NEXT_PUBLIC_BASE_URL="https://techtojob-omega.vercel.app/"
-   NEXT_PUBLIC_LINK_DISCORD="https://discord.gg/zRj82mvgE"
    NEXT_PUBLIC_GA_ANALYTICS_ID=""
    NEXT_PUBLIC_COOKIE_SCRIPT=""
    ```
@@ -318,7 +317,6 @@ Puedes crear un archivo `.env.local` en la raíz del proyecto con los siguientes
 
 ```env
 NEXT_PUBLIC_BASE_URL="https://techtojob-omega.vercel.app/"
-NEXT_PUBLIC_LINK_DISCORD="https://discord.gg/zRj82mvgE"
 NEXT_PUBLIC_GA_ANALYTICS_ID=""
 NEXT_PUBLIC_COOKIE_SCRIPT=""
 ```
@@ -326,7 +324,6 @@ NEXT_PUBLIC_COOKIE_SCRIPT=""
 ### Descripción de cada variable
 
 - `NEXT_PUBLIC_BASE_URL`: URL base del sitio para generación de rutas absolutas y metadatos sociales.
-- `NEXT_PUBLIC_LINK_DISCORD`: invitación pública de Discord para la comunidad.
 - `NEXT_PUBLIC_GA_ANALYTICS_ID`: ID de Google Analytics para entorno productivo.
 - `NEXT_PUBLIC_COOKIE_SCRIPT`: identificador del script de Cookies, si se desea activar en producción.
 
