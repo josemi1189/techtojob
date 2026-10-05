@@ -59,11 +59,12 @@ La aplicación combina una estética oscura con identidad visual moderna, navega
 El proyecto sigue una arquitectura basada en Next.js App Router con enfoque **server-first**:
 
 1. **Rutas dinámicas por locale (`src/app/[locale]/`)**: toda la navegación pública vive bajo el segmento `[locale]` y se gestiona con `next-intl`.
-2. **Generación de rutas por idioma**: la configuración de locales está definida en `src/i18n/routing.ts` con `locales: ["es", "en"]` y `defaultLocale: "es"`.
-3. **Separación de responsabilidades**:
+2. **Rutas localizadas**: `src/i18n/locales.ts` define y valida los idiomas soportados. `src/i18n/routes-config.ts` declara las rutas traducidas y `src/i18n/routing.ts` genera a partir de ellas la configuración de `next-intl`, con español como idioma por defecto.
+3. **Navegación y mensajes**: `src/i18n/navigation.ts` exporta los enlaces y utilidades de navegación localizados. `src/i18n/request.ts` valida el idioma solicitado y carga los mensajes JSON desde `src/messages/`.
+4. **Separación de responsabilidades**:
    - **Server Components**: utilizados para layouts, contenido estructural y metadatos.
    - **Client Components**: reservados para interacción de usuario, estado local y comportamientos del navegador.
-4. **Contenido modularizado**: cada sección principal está encapsulada en `src/pods`, mientras que el ensamblaje final se realiza en `src/app/[locale]/page.tsx`.
+5. **Contenido modularizado**: cada sección principal está encapsulada en `src/pods`, mientras que el ensamblaje final se realiza en `src/app/[locale]/page.tsx`.
 
 ---
 
@@ -97,9 +98,9 @@ techtojob/
 │   │   ├── menu.ts
 │   │   └── routes.ts
 │   ├── constants/
-│   │   ├── constant-link.tsx
-│   │   ├── constants.ts
-│   │   └── index.ts
+│   │   ├── constants.ts              # Nombre de la app, idiomas y URLs externas
+│   │   ├── constant-link.tsx         # Enlaces sociales y elementos del footer
+│   │   └── index.ts                  # Exportaciones públicas del módulo
 │   ├── content/
 │   │   ├── news-data.ts
 │   │   ├── testimonials-data.ts
@@ -110,10 +111,11 @@ techtojob/
 │   ├── hooks/
 │   │   └── useActiveSection.ts
 │   ├── i18n/
-│   │   ├── navigation.ts
-│   │   ├── request.ts
-│   │   ├── routes-config.ts
-│   │   └── routing.ts
+│   │   ├── locales.ts                # Tipo Locale y validación de idiomas
+│   │   ├── navigation.ts             # Enlaces y utilidades de navegación localizada
+│   │   ├── request.ts                # Selección del locale y carga de mensajes
+│   │   ├── routes-config.ts          # Rutas traducidas por idioma
+│   │   └── routing.ts                # Configuración next-intl y pathnames
 │   ├── layout/
 │   │   ├── content-dark.layout.tsx
 │   │   ├── content-light.layout.tsx
@@ -188,9 +190,15 @@ src/messages/
     └── es.json
 ```
 
+`src/i18n/locales.ts` mantiene el tipo `Locale` y la validación de idiomas. Las rutas localizadas se declaran en `src/i18n/routes-config.ts`; `src/i18n/routing.ts` las transforma en `pathnames` para `next-intl`. Los componentes deben usar los enlaces y utilidades de `src/i18n/navigation.ts` para conservar el locale en la navegación. `src/i18n/request.ts` valida el idioma solicitado y carga los JSON de cada namespace.
+
 Esto facilita mantener consistencia entre idiomas y evitar duplicación de textos en componentes.
 
-### 2. Layouts, metadata y SEO
+### 2. Constantes y enlaces compartidos
+
+`src/constants/constants.ts` reúne el nombre de la aplicación, los idiomas soportados y las URLs externas de la comunidad y redes sociales mediante `LINKS`. `src/constants/constant-link.tsx` reutiliza esas URLs para construir los enlaces sociales y los elementos del footer. Ambos módulos se exportan desde `src/constants/index.ts`, por lo que los componentes pueden importarlos desde `@/constants`.
+
+### 3. Layouts, metadata y SEO
 
 La app usa una estructura de layout multilocale en `src/app/[locale]/layout.tsx`, donde se configuran:
 
@@ -207,7 +215,7 @@ El helper de metadata se encuentra en `src/lib/metadata.ts`, con soporte para:
 - URLs absolutas con `NEXT_PUBLIC_BASE_URL`
 - alternancia entre idiomas
 
-### 3. Componentes interactivos y UX
+### 4. Componentes interactivos y UX
 
 La página de inicio compone varias secciones en el orden real del producto:
 
@@ -224,7 +232,7 @@ La página de inicio compone varias secciones en el orden real del producto:
 
 Esto se hace desde `src/app/[locale]/page.tsx` y permite mantener la composición de la landing page clara y modular. Cada bloque vive en `src/pods` con su propia lógica y contenido estático o dinámico según el caso.
 
-### 4. Design System & Estilos (Tailwind CSS v4)
+### 5. Design System & Estilos (Tailwind CSS v4)
 
 La base visual del proyecto se trabaja con Tailwind CSS v4 y estilos globales en `src/assets/css/base/global-styles.css` y `src/assets/css/vendors/`. El proyecto usa un enfoque de diseño basado en:
 
